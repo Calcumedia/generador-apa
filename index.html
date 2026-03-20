@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador APA 7 | Calculadora de Notas</title>
+    <style>
+        /* Estilos limpios y Mobile First */
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --border: #e2e8f0;
+            --success: #10b981;
+        }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h1 { text-align: center; color: var(--text); font-size: 1.8rem; }
+        p.subtitle { text-align: center; color: #64748b; margin-bottom: 30px; }
+        
+        /* Pestañas */
+        .tabs { display: flex; gap: 10px; margin-bottom: 20px; justify-content: center; flex-wrap: wrap; }
+        .tab-btn {
+            padding: 10px 20px; border: 1px solid var(--border); background: white;
+            border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.2s;
+        }
+        .tab-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        
+        /* Formularios */
+        .form-section { display: none; }
+        .form-section.active { display: block; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.9rem; }
+        input {
+            width: 100%; padding: 10px; border: 1px solid var(--border);
+            border-radius: 6px; box-sizing: border-box; font-family: inherit;
+        }
+        
+        /* Botón Principal */
+        .btn-generate {
+            width: 100%; padding: 15px; background: var(--primary); color: white;
+            border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold;
+            cursor: pointer; margin-top: 10px; transition: background 0.2s;
+        }
+        .btn-generate:hover { background: var(--primary-hover); }
+        
+        /* Resultados y Botones de Copiar */
+        .results-box {
+            margin-top: 30px; padding: 20px; border: 2px dashed var(--primary);
+            border-radius: 8px; background: #eff6ff; display: none;
+        }
+        .result-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 10px; flex-wrap: wrap; gap: 10px;
+        }
+        .result-title { font-weight: bold; color: var(--primary); margin: 0; }
+        
+        .btn-copy {
+            background: white; border: 1px solid var(--primary); color: var(--primary);
+            padding: 6px 15px; border-radius: 6px; cursor: pointer; font-size: 0.9rem;
+            font-weight: 600; transition: all 0.2s; display: flex; align-items: center; gap: 5px;
+        }
+        .btn-copy:hover { background: var(--primary); color: white; }
+        .btn-copy.copied { background: var(--success); border-color: var(--success); color: white; }
+        
+        /* LA MAGIA DE APA: Sangría Francesa */
+        .sangria-francesa {
+            padding-left: 36px; /* Aprox 1.27cm */
+            text-indent: -36px;
+            background: white; padding: 15px 15px 15px 36px;
+            border: 1px solid var(--border); border-radius: 6px;
+            margin-bottom: 25px;
+        }
+        
+        .cita-corta {
+            background: white; padding: 15px; border: 1px solid var(--border);
+            border-radius: 6px; margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Generador APA 7 Automático ⚡</h1>
+    <p class="subtitle">Sin fricción. Rellena los datos básicos y nosotros montamos la estructura perfecta para tu TFG/TFM.</p>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="changeTab('web')">🌐 Página Web</button>
+        <button class="tab-btn" onclick="changeTab('libro')">📚 Libro</button>
+        <button class="tab-btn" onclick="changeTab('paper')">📄 Artículo (Paper)</button>
+    </div>
+
+    <div id="form-web" class="form-section active">
+        <div class="form-group"><label>Autor o Institución (Ej: Pérez, J. o Ministerio de Sanidad)</label><input type="text" id="w-autor" placeholder="Pérez, J."></div>
+        <div class="form-group"><label>Año (Ej: 2024 o s.f.)</label><input type="text" id="w-ano" placeholder="2024"></div>
+        <div class="form-group"><label>Título de la página</label><input type="text" id="w-titulo" placeholder="El impacto de la IA"></div>
+        <div class="form-group"><label>Nombre del sitio web</label><input type="text" id="w-sitio" placeholder="Wikipedia"></div>
+        <div class="form-group"><label>URL</label><input type="url" id="w-url" placeholder="https://..."></div>
+    </div>
+
+    <div id="form-libro" class="form-section">
+        <div class="form-group"><label>Autor(es) (Ej: Pérez, J., & García, M.)</label><input type="text" id="l-autor"></div>
+        <div class="form-group"><label>Año</label><input type="text" id="l-ano"></div>
+        <div class="form-group"><label>Título del Libro</label><input type="text" id="l-titulo"></div>
+        <div class="form-group"><label>Editorial</label><input type="text" id="l-editorial"></div>
+    </div>
+
+    <div id="form-paper" class="form-section">
+        <div class="form-group"><label>Autor(es)</label><input type="text" id="p-autor"></div>
+        <div class="form-group"><label>Año</label><input type="text" id="p-ano"></div>
+        <div class="form-group"><label>Título del Artículo</label><input type="text" id="p-titulo"></div>
+        <div class="form-group"><label>Nombre de la Revista</label><input type="text" id="p-revista"></div>
+        <div style="display: flex; gap: 10px;">
+            <div class="form-group" style="flex: 1;"><label>Volumen</label><input type="text" id="p-vol"></div>
+            <div class="form-group" style="flex: 1;"><label>Número</label><input type="text" id="p-num"></div>
+        </div>
+        <div class="form-group"><label>Páginas (Ej: 112-130)</label><input type="text" id="p-pag"></div>
+        <div class="form-group"><label>DOI (Ej: https://doi.org/...)</label><input type="text" id="p-doi"></div>
+    </div>
+
+    <button class="btn-generate" onclick="generarCita()">Generar Cita APA 7</button>
+
+    <div id="resultados" class="results-box">
+        
+        <div class="result-header">
+            <div class="result-title">1. Cita para el texto</div>
+            <button class="btn-copy" onclick="copiarTexto('res-corta', this)">📋 Copiar cita</button>
+        </div>
+        <div class="cita-corta" id="res-corta">Aquí aparecerá la cita corta</div>
+        
+        <div class="result-header">
+            <div class="result-title">2. Referencia para Bibliografía</div>
+            <button class="btn-copy" onclick="copiarTexto('res-larga', this)">📋 Copiar referencia</button>
+        </div>
+        <div class="sangria-francesa" id="res-larga">Aquí aparecerá la referencia completa</div>
+
+    </div>
+</div>
+
+<script>
+    let activeTab = 'web';
+
+    function changeTab(tabName) {
+        activeTab = tabName;
+        document.querySelectorAll('.form-section').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+        
+        document.getElementById('form-' + tabName).classList.add('active');
+        event.target.classList.add('active');
+        document.getElementById('resultados').style.display = 'none';
+    }
+
+    function extraerApellido(cadenaAutores) {
+        if(!cadenaAutores) return "Autor";
+        let primerAutor = cadenaAutores.split(',')[0]; 
+        return primerAutor.trim();
+    }
+
+    function generarCita() {
+        let citaCorta = "";
+        let citaLarga = "";
+
+        if (activeTab === 'web') {
+            const autor = document.getElementById('w-autor').value || 'S.A.';
+            const ano = document.getElementById('w-ano').value || 's.f.';
+            const titulo = document.getElementById('w-titulo').value || 'Sin título';
+            const sitio = document.getElementById('w-sitio').value || '';
+            const url = document.getElementById('w-url').value || '';
+
+            citaCorta = `(${extraerApellido(autor)}, ${ano})`;
+            citaLarga = `${autor}. (${ano}). <i>${titulo}</i>. ${sitio}. ${url}`;
+        } 
+        else if (activeTab === 'libro') {
+            const autor = document.getElementById('l-autor').value || 'S.A.';
+            const ano = document.getElementById('l-ano').value || 's.f.';
+            const titulo = document.getElementById('l-titulo').value || 'Sin título';
+            const editorial = document.getElementById('l-editorial').value || '';
+
+            citaCorta = `(${extraerApellido(autor)}, ${ano})`;
+            citaLarga = `${autor}. (${ano}). <i>${titulo}</i>. ${editorial}.`;
+        }
+        else if (activeTab === 'paper') {
+            const autor = document.getElementById('p-autor').value || 'S.A.';
+            const ano = document.getElementById('p-ano').value || 's.f.';
+            const titulo = document.getElementById('p-titulo').value || 'Sin título';
+            const revista = document.getElementById('p-revista').value || '';
+            const vol = document.getElementById('p-vol').value || '';
+            const num = document.getElementById('p-num').value || '';
+            const pag = document.getElementById('p-pag').value || '';
+            let doi = document.getElementById('p-doi').value || '';
+            
+            if(doi && !doi.startsWith('http')) doi = 'https://doi.org/' + doi;
+
+            citaCorta = `(${extraerApellido(autor)}, ${ano})`;
+            citaLarga = `${autor}. (${ano}). ${titulo}. <i>${revista}, ${vol}</i>(${num}), ${pag}. ${doi}`;
+        }
+
+        document.getElementById('res-corta').innerHTML = citaCorta;
+        document.getElementById('res-larga').innerHTML = citaLarga;
+        document.getElementById('resultados').style.display = 'block';
+    }
+
+    // Función para copiar al portapapeles con efecto visual
+    function copiarTexto(idElemento, boton) {
+        const texto = document.getElementById(idElemento).innerText; // Coge el texto limpio sin las etiquetas HTML
+        
+        navigator.clipboard.writeText(texto).then(() => {
+            const textoOriginal = boton.innerHTML;
+            boton.innerHTML = "¡Copiado! ✅";
+            boton.classList.add('copied');
+            
+            // Vuelve al estado normal después de 2 segundos
+            setTimeout(() => {
+                boton.innerHTML = textoOriginal;
+                boton.classList.remove('copied');
+            }, 2000);
+        }).catch(err => {
+            console.error('Error al copiar: ', err);
+            alert("Tu navegador no permite copiar automáticamente. Selecciona el texto manualmente.");
+        });
+    }
+</script>
+
+</body>
+</html>
