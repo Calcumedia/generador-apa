@@ -20,7 +20,6 @@
     <meta name="twitter:image" content="https://calcumedia.github.io/generador-apa/imagen_social.png">
 
     <style>
-        /* DISEÑO PREMIUM Y MODERNO */
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
         :root {
@@ -51,105 +50,361 @@
         }
 
         .app-container {
-            width: 100%; max-width: 750px; background: var(--card-bg);
-            padding: 40px 35px; border-radius: 24px;
+            width: 100%;
+            max-width: 750px;
+            background: var(--card-bg);
+            padding: 40px 35px;
+            border-radius: 24px;
             box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 10px 15px -5px rgba(0, 0, 0, 0.02);
-            margin-bottom: 30px; box-sizing: border-box;
-            display: flex; flex-direction: column; align-items: center;
+            margin-bottom: 30px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             border: 1px solid rgba(255,255,255,0.8);
         }
 
         .header { text-align: center; margin-bottom: 30px; width: 100%;}
-        .header h1 { margin: 0 0 12px 0; font-size: 2rem; color: var(--text-main); font-weight: 800; letter-spacing: -0.5px; }
-        .header p { margin: 0; color: var(--text-muted); font-size: 1rem; font-weight: 500;}
+        .header h1 {
+            margin: 0 0 12px 0;
+            font-size: 2rem;
+            color: var(--text-main);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .header p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 500;
+        }
 
-        /* CAJÓN INTELIGENTE */
         .magic-search-container {
             background: linear-gradient(to bottom right, #ffffff, #f8fafc);
-            border: 2px solid #cbd5e1; border-radius: 16px;
-            padding: 25px; margin-bottom: 20px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-            width: 100%; box-sizing: border-box; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+            border: 2px solid #cbd5e1;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
         }
-        .magic-search-container.success { border-color: var(--success); background: var(--success-light); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1); }
-        .magic-search-container.warning { border-color: #fbbf24; background: #fffbeb; box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.1); } 
+
+        .magic-search-container.success {
+            border-color: var(--success);
+            background: var(--success-light);
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+        }
+
+        .magic-search-container.warning {
+            border-color: #fbbf24;
+            background: #fffbeb;
+            box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.1);
+        } 
         
-        .magic-search-title { font-weight: 800; color: var(--primary); margin: 0 0 8px 0; font-size: 1.15rem; display: flex; align-items: center; gap: 8px;}
-        .magic-instructions { font-size: 0.9rem; color: #475569; margin: 0 0 18px 0; line-height: 1.5; }
-        .magic-instructions strong { color: var(--primary); font-weight: 700;}
+        .magic-search-title {
+            font-weight: 800;
+            color: var(--primary);
+            margin: 0 0 8px 0;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .magic-instructions {
+            font-size: 0.9rem;
+            color: #475569;
+            margin: 0 0 18px 0;
+            line-height: 1.5;
+        }
+
+        .magic-instructions strong {
+            color: var(--primary);
+            font-weight: 700;
+        }
         
-        .search-group { display: flex; flex-direction: column; gap: 12px; margin-bottom: 10px; }
+        .search-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
         .search-group textarea {
-            width: 100%; padding: 16px; border: 1px solid #cbd5e1;
-            border-radius: 12px; font-size: 0.95rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            resize: vertical; min-height: 85px; font-family: inherit; box-sizing: border-box;
-            background: #fdfdfd; transition: all 0.2s;
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            resize: vertical;
+            min-height: 85px;
+            font-family: inherit;
+            box-sizing: border-box;
+            background: #fdfdfd;
+            transition: all 0.2s;
         }
-        .search-group textarea:focus { border-color: var(--primary-light); outline: none; box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15); background: white; }
+
+        .search-group textarea:focus {
+            border-color: var(--primary-light);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+            background: white;
+        }
         
         .btn-search {
-            background: var(--primary-gradient); color: white; border: none; padding: 16px 25px;
-            border-radius: 12px; font-weight: 700; font-size: 1.05rem; cursor: pointer; 
-            transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; justify-content: center; width: 100%;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            padding: 16px 25px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer; 
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
             box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
         }
-        .btn-search:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4); }
+
+        .btn-search:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+        }
+
         .btn-search:active { transform: translateY(0); }
-        .btn-search:disabled { background: #94a3b8; cursor: not-allowed; box-shadow: none; transform: none; opacity: 0.8; }
+
+        .btn-search:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+            opacity: 0.8;
+        }
         
-        #search-status { font-size: 0.9rem; font-weight: 600; min-height: 20px; text-align: center; margin-top: 12px; padding: 10px; border-radius: 8px; display: none;}
+        #search-status {
+            font-size: 0.9rem;
+            font-weight: 600;
+            min-height: 20px;
+            text-align: center;
+            margin-top: 12px;
+            padding: 10px;
+            border-radius: 8px;
+            display: none;
+        }
+
         #search-status.active { display: block; }
-        .status-loading { color: var(--primary); animation: pulse 1.5s infinite; }
-        .status-success { color: #065f46; background: #d1fae5; border: 1px solid #34d399;}
-        .status-error { color: #991b1b; background: #fee2e2; border: 1px solid #f87171;}
-        .status-warning { color: #92400e; background: #fef3c7; border: 1px solid #fbbf24;}
+
+        .status-loading {
+            color: var(--primary);
+            animation: pulse 1.5s infinite;
+        }
+
+        .status-success {
+            color: #065f46;
+            background: #d1fae5;
+            border: 1px solid #34d399;
+        }
+
+        .status-error {
+            color: #991b1b;
+            background: #fee2e2;
+            border: 1px solid #f87171;
+        }
+
+        .status-warning {
+            color: #92400e;
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+        }
         
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
 
-        /* BOTÓN MANUAL */
         .btn-toggle-manual {
-            background: #f1f5f9; border: 1px dashed #cbd5e1; color: var(--text-muted); font-size: 0.95rem;
-            font-weight: 700; cursor: pointer; padding: 16px; border-radius: 12px;
-            transition: all 0.2s; width: 100%; text-align: center; margin-bottom: 10px;
+            background: #f1f5f9;
+            border: 1px dashed #cbd5e1;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 16px;
+            border-radius: 12px;
+            transition: all 0.2s;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
         }
-        .btn-toggle-manual:hover { background: #e2e8f0; color: var(--text-main); border-color: #94a3b8; }
 
-        /* CONTENEDOR FORMULARIOS */
-        #contenedor-formularios { width: 100%; animation: slideDown 0.4s ease-out; }
+        .btn-toggle-manual:hover {
+            background: #e2e8f0;
+            color: var(--text-main);
+            border-color: #94a3b8;
+        }
+
+        #contenedor-formularios {
+            width: 100%;
+            animation: slideDown 0.4s ease-out;
+        }
+
         [hidden] { display: none !important; }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* ETIQUETA DE ORIGEN DE DATOS */
-        #origen-datos {
-            display: none; background: #e0e7ff; color: #3730a3; padding: 8px 12px; border-radius: 8px; 
-            font-size: 0.85rem; font-weight: 600; margin-bottom: 15px; border: 1px solid #c7d2fe;
-            align-items: center; gap: 5px;
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .tabs { display: flex; background: #f1f5f9; padding: 6px; border-radius: 14px; margin-bottom: 25px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); }
-        .tab-btn { flex: 1; padding: 12px; border: none; background: transparent; border-radius: 10px; cursor: pointer; font-weight: 700; color: var(--text-muted); transition: all 0.3s ease; font-size: 0.95rem; }
-        .tab-btn.active { background: white; color: var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .tab-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
+        #origen-datos {
+            display: none;
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 8px 12px;
+            border-radius: 8px; 
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border: 1px solid #c7d2fe;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .tabs {
+            display: flex;
+            background: #f1f5f9;
+            padding: 6px;
+            border-radius: 14px;
+            margin-bottom: 25px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            background: transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .tab-btn.active {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .tab-btn:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: -2px;
+        }
 
         .form-section { display: none; animation: fadeIn 0.3s ease; }
         .form-section.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
         
         .form-group { margin-bottom: 18px; }
-        label { display: block; font-weight: 700; margin-bottom: 6px; font-size: 0.9rem; color: #334155; }
-        .hint { font-size: 0.75rem; color: #94a3b8; font-weight: 600; margin-left: 5px; }
-        input { width: 100%; padding: 14px 16px; border: 1px solid #e2e8f0; border-radius: 12px; box-sizing: border-box; font-family: inherit; font-size: 1rem; background: #f8fafc; transition: all 0.2s; color: var(--text-main); }
-        input:focus { outline: none; border-color: var(--primary-light); background: white; box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1); }
+
+        label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        .hint {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1rem;
+            background: #f8fafc;
+            transition: all 0.2s;
+            color: var(--text-main);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
         
-        .highlight-success { border-color: var(--success) !important; background-color: var(--success-light) !important; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important; }
-        .highlight-warning { border-color: #fbbf24 !important; background-color: #fffbeb !important; box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.15) !important; }
+        .highlight-success {
+            border-color: var(--success) !important;
+            background-color: var(--success-light) !important;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+        }
 
-        .btn-generate { width: 100%; padding: 18px; background: var(--text-main); color: white; border: none; border-radius: 14px; font-size: 1.1rem; font-weight: 800; cursor: pointer; margin-top: 15px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2); transition: all 0.2s; }
-        .btn-generate:hover { background: #1e293b; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(15, 23, 42, 0.3); }
+        .highlight-warning {
+            border-color: #fbbf24 !important;
+            background-color: #fffbeb !important;
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.15) !important;
+        }
 
-        .btn-close-manual { background: transparent; border: none; color: #94a3b8; font-size: 0.9rem; font-weight: 600; cursor: pointer; padding: 15px; width: 100%; text-align: center; margin-top: 10px; transition: color 0.2s; }
-        .btn-close-manual:hover { color: #475569; text-decoration: underline; }
+        .btn-generate {
+            width: 100%;
+            padding: 18px;
+            background: var(--text-main);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+            transition: all 0.2s;
+        }
 
-        /* FOCO ACCESIBLE PARA BOTONES PRINCIPALES */
+        .btn-generate:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(15, 23, 42, 0.3);
+        }
+
+        .btn-close-manual {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            transition: color 0.2s;
+        }
+
+        .btn-close-manual:hover {
+            color: #475569;
+            text-decoration: underline;
+        }
+
         .btn-search:focus-visible, 
         .btn-generate:focus-visible, 
         .btn-copy:focus-visible, 
@@ -160,62 +415,281 @@
             outline-offset: 2px;
         }
 
-        /* RESULTADOS Y ALERTAS */
-        .results-box { margin-top: 35px; padding: 25px; border-radius: 16px; background: var(--success-light); border: 1px solid #a7f3d0; width: 100%; box-sizing: border-box; }
+        .results-box {
+            margin-top: 35px;
+            padding: 25px;
+            border-radius: 16px;
+            background: var(--success-light);
+            border: 1px solid #a7f3d0;
+            width: 100%;
+            box-sizing: border-box;
+        }
         
-        .validation-warnings { background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 15px 20px; margin-bottom: 20px; display: none; }
-        .validation-warnings h4 { margin: 0 0 8px 0; color: #b45309; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; }
-        .validation-warnings ul { margin: 0; padding-left: 20px; color: #92400e; font-size: 0.85rem; }
+        .validation-warnings {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .validation-warnings h4 {
+            margin: 0 0 8px 0;
+            color: #b45309;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .validation-warnings ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #92400e;
+            font-size: 0.85rem;
+        }
+
         .validation-warnings li { margin-bottom: 4px; }
 
-        .info-cita-textual { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 12px 15px; border-radius: 0 8px 8px 0; margin-bottom: 25px; font-size: 0.85rem; color: #1e3a8a; }
+        .info-cita-textual {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 12px 15px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+            font-size: 0.85rem;
+            color: #1e3a8a;
+        }
 
-        .result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-        .result-title { font-weight: 800; color: #065f46; font-size: 0.95rem; text-transform: uppercase; margin: 0; letter-spacing: 0.5px;}
-        .btn-copy { background: white; border: 1px solid #10b981; color: #059669; padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 700; transition: all 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .btn-copy:hover { background: #10b981; color: white; }
-        .btn-copy.copied { background: #059669; border-color: #059669; color: white; }
-        .cita-corta { background: white; padding: 18px; border: 1px solid #a7f3d0; border-radius: 12px; margin-bottom: 12px; font-size: 1.05rem; color: var(--text-main); }
-        .sangria-francesa { padding-left: 36px; text-indent: -36px; background: white; padding-top: 18px; padding-bottom: 18px; padding-right: 18px; border: 1px solid #a7f3d0; border-radius: 12px; margin-bottom: 10px; font-size: 1.05rem; line-height: 2; color: var(--text-main); }
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
 
-        /* SECCIÓN RECURSOS */
-        .resources-wrapper { width: 100%; max-width: 750px; margin-bottom: 35px; }
-        .resources-title { font-size: 1.1rem; font-weight: 800; color: var(--text-muted); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;}
+        .result-title {
+            font-weight: 800;
+            color: #065f46;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-copy {
+            background: white;
+            border: 1px solid #10b981;
+            color: #059669;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .btn-copy:hover {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-copy.copied {
+            background: #059669;
+            border-color: #059669;
+            color: white;
+        }
+
+        .cita-corta {
+            background: white;
+            padding: 18px;
+            border: 1px solid #a7f3d0;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        .sangria-francesa {
+            padding-left: 36px;
+            text-indent: -36px;
+            background: white;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            padding-right: 18px;
+            border: 1px solid #a7f3d0;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+            line-height: 2;
+            color: var(--text-main);
+        }
+
+        .resources-wrapper {
+            width: 100%;
+            max-width: 750px;
+            margin-bottom: 35px;
+        }
+
+        .resources-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: left;
+        }
+
         .resource-grid { display: grid; gap: 15px; }
         
         .amazon-card {
-            display: flex; align-items: center; justify-content: space-between;
-            background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #ff9900;
-            border-radius: 12px; padding: 15px 20px; text-decoration: none; color: var(--text-main);
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); flex-wrap: wrap; gap: 15px; transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid #ff9900;
+            border-radius: 12px;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: var(--text-main);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+            gap: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .amazon-card:hover { transform: translateY(-2px); box-shadow: 0 8px 15px -3px rgba(0,0,0,0.08); }
-        .amazon-text { flex: 1; min-width: 200px; }
-        .amazon-title { font-weight: 800; font-size: 1rem; color: #0f172a; margin: 0 0 2px 0; }
-        .amazon-subtitle { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
-        .amazon-btn { background-color: #ffd814; border: 1px solid #fcd200; border-radius: 100px; color: #0f172a; padding: 6px 18px; font-weight: 700; font-size: 0.85rem; }
+
+        .amazon-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px -3px rgba(0,0,0,0.08);
+        }
+
+        .amazon-text {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .amazon-title {
+            font-weight: 800;
+            font-size: 1rem;
+            color: #0f172a;
+            margin: 0 0 2px 0;
+        }
+
+        .amazon-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .amazon-btn {
+            background-color: #ffd814;
+            border: 1px solid #fcd200;
+            border-radius: 100px;
+            color: #0f172a;
+            padding: 6px 18px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
 
         .resource-card-secondary {
-            display: flex; align-items: center; justify-content: space-between;
-            background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px 20px;
-            text-decoration: none; color: var(--text-main); transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: background 0.2s;
         }
+
         .resource-card-secondary:hover { background: #f1f5f9; }
-        .resource-title-sec { font-weight: 700; font-size: 0.95rem; margin: 0; display: flex; align-items: center; gap: 8px;}
-        .resource-icon { color: var(--text-muted); font-size: 1.2rem;}
 
-        /* FAQ */
-        .faq-wrapper { width: 100%; max-width: 750px; box-sizing: border-box; margin-bottom: 40px; }
-        .faq-main-title { text-align: center; font-size: 1.75rem; font-weight: 800; margin-bottom: 30px; letter-spacing: -0.5px;}
-        .faq-item { background: #ffffff; border-radius: 16px; margin-bottom: 15px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); overflow: hidden; }
-        .faq-question { width: 100%; display: flex; justify-content: space-between; padding: 22px 25px; align-items: center; background: none; border: none; font-size: 1.05rem; font-weight: 700; cursor: pointer; text-align: left; color: var(--text-main); transition: color 0.2s; }
+        .resource-title-sec {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .resource-icon {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .faq-wrapper {
+            width: 100%;
+            max-width: 750px;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+
+        .faq-main-title {
+            text-align: center;
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border-radius: 16px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 22px 25px;
+            align-items: center;
+            background: none;
+            border: none;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: left;
+            color: var(--text-main);
+            transition: color 0.2s;
+        }
+
         .faq-question:hover { color: var(--primary); }
-        .faq-icon { transition: transform 0.3s ease; color: var(--text-muted); font-size: 0.8rem;}
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .faq-answer p { padding: 0 25px 25px 25px; margin: 0; color: #475569; font-size: 0.95rem; line-height: 1.6;}
-        .faq-item.open .faq-icon { transform: rotate(180deg); color: var(--primary); }
 
-        /* UTILIDADES DE ACCESIBILIDAD (A11Y) */
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer p {
+            padding: 0 25px 25px 25px;
+            margin: 0;
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
         .sr-only {
             position: absolute;
             width: 1px;
@@ -226,6 +700,22 @@
             clip: rect(0, 0, 0, 0);
             white-space: nowrap;
             border: 0;
+        }
+
+        @media (max-width: 640px) {
+            .app-container {
+                padding: 28px 20px;
+            }
+
+            .result-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -240,12 +730,17 @@
     <div class="magic-search-container" id="magic-container">
         <p class="magic-search-title">✨ Extractor de Datos Bibliográficos</p>
         <p class="magic-instructions">
-            Pega un <strong>DOI</strong>, un <strong>ISBN</strong> o texto de referencias académicas y rellenaremos los datos por ti usando Crossref y Google Books. También puedes pegar una <strong>URL</strong> para autocompletar el enlace.
+            Pega un <strong>DOI</strong>, un <strong>ISBN</strong> o texto de referencias académicas y rellenaremos los datos por ti usando bases de datos abiertas como Crossref, DataCite, Google Books y OpenLibrary. También puedes pegar una <strong>URL</strong> para autocompletar el enlace.
         </p>
+
         <div class="search-group">
+            <!-- Accesibilidad: label oculto para lector de pantalla -->
+            <label for="magic-input" class="sr-only">Introduce DOI, ISBN, URL o referencia bibliográfica</label>
             <textarea id="magic-input" placeholder="Ej: Pega aquí tu DOI (10.xxx), ISBN, texto académico o URL..."></textarea>
             <button id="btn-search-main" class="btn-search" type="button" onclick="buscarDatosMagicos()">Buscar coincidencias y Autocompletar</button>
+            <button class="btn-close-manual" type="button" onclick="limpiarTodo()">Limpiar todo</button>
         </div>
+
         <div id="search-status" role="status" aria-live="polite"></div>
     </div>
 
@@ -293,7 +788,6 @@
         </div>
 
         <button class="btn-generate" type="button" onclick="generarCita()">Generar Cita APA 7 🚀</button>
-
         <button class="btn-close-manual" type="button" onclick="ocultarFormularios()">Cerrar formulario manual ⬆️</button>
     </div>
 
@@ -305,12 +799,20 @@
             <ul id="warning-list"></ul>
         </div>
 
+        <!-- Aviso general de revisión -->
+        <div class="info-cita-textual" style="margin-bottom: 20px;">
+            ℹ️ <strong>Importante:</strong> Esta referencia ha sido generada automáticamente. Verifica siempre autores, año, título, tipo de documento y formato final antes de entregarla.
+        </div>
+
         <div class="result-header">
             <div class="result-title">1. Cita en el texto</div>
             <button class="btn-copy" type="button" aria-label="Copiar cita en el texto" onclick="copiarTexto('res-corta', this)">📋 Copiar cita</button>
         </div>
         <div class="cita-corta" id="res-corta"></div>
-        <div class="info-cita-textual">ℹ️ <strong>Recuerda:</strong> Si estás haciendo una cita textual (copiando palabra por palabra), la norma APA exige añadir la página al final de esta cita. Ej: <em>(Pérez, 2024, p. 15)</em></div>
+
+        <div class="info-cita-textual">
+            ℹ️ <strong>Recuerda:</strong> Si estás haciendo una cita textual (copiando palabra por palabra), la norma APA exige añadir la página al final de esta cita. Ej: <em>(Pérez, 2024, p. 15)</em>
+        </div>
         
         <div class="result-header">
             <div class="result-title">2. Referencia Bibliográfica</div>
@@ -343,42 +845,45 @@
 
 <div class="faq-wrapper">
     <h2 class="faq-main-title">Preguntas Frecuentes</h2>
+
     <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-btn-1">
             <span>¿Cómo funciona el Extractor Automático?</span><span class="faq-icon">▼</span>
         </button>
         <div id="faq-1" class="faq-answer" role="region" aria-labelledby="faq-btn-1">
-            <p>Nuestra herramienta se conecta directamente a bases de datos académicas abiertas como Crossref y Google Books. Cuando pegas un DOI, un ISBN o texto académico limpio, consultamos esas bases de datos para encontrar coincidencias y rellenar los campos de autor, año y título por ti. Es un sistema asistido: tú siempre debes revisar los datos en el formulario antes de generar la cita final para evitar errores.</p>
+            <p>Nuestra herramienta se conecta directamente a bases de datos académicas abiertas como Crossref, DataCite, Google Books y OpenLibrary. Cuando pegas un DOI, un ISBN o texto académico limpio, consultamos esas bases de datos para encontrar coincidencias y rellenar los campos de autor, año y título por ti. Es un sistema asistido: tú siempre debes revisar los datos en el formulario antes de generar la cita final para evitar errores.</p>
         </div>
     </div>
+
     <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-btn-2">
             <span>¿Qué pasa si pego el enlace de una web?</span><span class="faq-icon">▼</span>
         </button>
         <div id="faq-2" class="faq-answer" role="region" aria-labelledby="faq-btn-2">
-            <p>Si pegas una URL, nuestro sistema detectará el dominio (el nombre del sitio web) y rellenará el enlace automáticamente. Sin embargo, por seguridad de los navegadores, no podemos extraer directamente el autor y el título de artículos de noticias o blogs. Te pediremos que rellenes esos dos campos manualmente para garantizar que la cita sea precisa.</p>
+            <p>Si pegas una URL, nuestro sistema detectará el dominio y rellenará el enlace automáticamente. Sin embargo, por seguridad del navegador, no podemos extraer directamente el autor y el título de muchas páginas web. Tendrás que revisarlos o completarlos manualmente.</p>
         </div>
     </div>
+
     <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-btn-3">
             <span>¿Qué ocurre si la fuente no tiene autor?</span><span class="faq-icon">▼</span>
         </button>
         <div id="faq-3" class="faq-answer" role="region" aria-labelledby="faq-btn-3">
-            <p>Las normas APA 7 establecen que, si un documento o página web no tiene un autor personal o corporativo identificable, la cita debe comenzar por el título del documento. Si dejas la casilla de "Autores" en blanco en nuestra herramienta, aplicaremos esta regla automáticamente moviendo el título a la primera posición y acortándolo correctamente en la cita parentética.</p>
+            <p>Si una fuente no tiene autor identificable, APA 7 establece que la referencia debe comenzar por el título. Si dejas el campo de autores vacío, la herramienta aplicará esa lógica automáticamente en la cita y en la referencia.</p>
         </div>
     </div>
 </div>
 
 <script>
     let activeTab = 'web';
-
     const PARTICULAS_APELLIDO = ['de', 'del', 'la', 'las', 'los', 'y', 'van', 'von', 'der', 'da', 'di', 'do'];
 
     document.addEventListener("DOMContentLoaded", function() {
         const magicInput = document.getElementById('magic-input');
+
         magicInput.addEventListener('keydown', function(e) {
             if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-                e.preventDefault(); 
+                e.preventDefault();
                 buscarDatosMagicos();
             }
         });
@@ -389,10 +894,10 @@
                 const faqItem = this.parentElement;
                 const faqAnswer = this.nextElementSibling;
                 const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                
+
                 this.setAttribute('aria-expanded', !isExpanded);
                 faqItem.classList.toggle('open');
-                
+
                 if (faqItem.classList.contains('open')) {
                     faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
                 } else {
@@ -401,11 +906,11 @@
             });
         });
 
-        // NAVEGACIÓN POR TECLADO EN PESTAÑAS (Accesibilidad A11y)
         const tabs = document.querySelectorAll('.tab-btn');
         tabs.forEach((tab, index) => {
             tab.addEventListener('keydown', (e) => {
                 let newIndex = index;
+
                 if (e.key === 'ArrowRight') newIndex = (index + 1) % tabs.length;
                 else if (e.key === 'ArrowLeft') newIndex = (index - 1 + tabs.length) % tabs.length;
                 else if (e.key === 'Home') newIndex = 0;
@@ -423,15 +928,14 @@
     async function fetchConTimeout(resource, options = {}, timeout = 10000) {
         const controller = new AbortController();
         const id = setTimeout(() => controller.abort(), timeout);
+
         try {
             return await fetch(resource, {
                 ...options,
                 signal: controller.signal
             });
         } catch (error) {
-            if (error.name === 'AbortError') {
-                throw new Error('Timeout');
-            }
+            if (error.name === 'AbortError') throw new Error('Timeout');
             throw error;
         } finally {
             clearTimeout(id);
@@ -446,9 +950,16 @@
         });
     }
 
+    // Admite DOI normal, URL doi.org y prefijo doi:
     function limpiarDOI(doi) {
         if (!doi) return "";
-        return doi.replace(/[.,;:\)\]]+$/, '');
+
+        let limpio = doi.trim();
+        limpio = limpio.replace(/^https?:\/\/(dx\.)?doi\.org\//i, '');
+        limpio = limpio.replace(/^doi:\s*/i, '');
+        limpio = limpio.replace(/[.,;:\)\]]+$/, '');
+
+        return limpio;
     }
 
     function limpiarUrlParaCita(url) {
@@ -465,7 +976,8 @@
         }
     }
 
-    function mostrarFormularios() {
+    // Enfoca el primer campo vacío si existe
+    function mostrarFormularios(enfocar = true) {
         const contenedor = document.getElementById('contenedor-formularios');
         const btnManual = document.getElementById('btn-toggle-manual');
 
@@ -473,8 +985,16 @@
         btnManual.style.display = 'none';
         btnManual.setAttribute('aria-expanded', 'true');
 
-        const primerCampoActivo = contenedor.querySelector('.form-section.active input');
-        if (primerCampoActivo) primerCampoActivo.focus();
+        if (enfocar) {
+            const panelActivo = contenedor.querySelector('.form-section.active');
+            if (!panelActivo) return;
+
+            const inputs = [...panelActivo.querySelectorAll('input')];
+            const primerVacio = inputs.find(input => !input.value.trim());
+            const objetivo = primerVacio || inputs[0];
+
+            if (objetivo) objetivo.focus();
+        }
     }
 
     function ocultarFormularios() {
@@ -487,36 +1007,69 @@
         btnManual.focus();
 
         document.getElementById('resultados').hidden = true;
-        
+
         const statusBox = document.getElementById('search-status');
         const magicContainer = document.getElementById('magic-container');
-        
+
         document.getElementById('origen-datos').style.display = 'none';
         statusBox.style.display = 'none';
-        statusBox.className = ''; 
+        statusBox.className = '';
+        statusBox.innerText = '';
         magicContainer.classList.remove('success', 'warning');
-        
+
         document.getElementById('label-revista-repositorio').innerText = "Nombre de la Revista";
+
+        document.getElementById('validation-warnings').style.display = 'none';
+        document.getElementById('warning-list').innerHTML = '';
+        document.getElementById('res-corta').innerHTML = '';
+        document.getElementById('res-larga').innerHTML = '';
+        document.getElementById('resultado-anuncio').textContent = '';
+    }
+
+    function limpiarTodo() {
+        document.getElementById('magic-input').value = '';
+        document.getElementById('resultados').hidden = true;
+        document.getElementById('origen-datos').style.display = 'none';
+
+        const statusBox = document.getElementById('search-status');
+        const magicContainer = document.getElementById('magic-container');
+
+        statusBox.style.display = 'none';
+        statusBox.className = '';
+        statusBox.innerText = '';
+
+        magicContainer.classList.remove('success', 'warning');
+
+        ['web', 'libro', 'paper'].forEach(limpiarCampos);
+
+        document.getElementById('validation-warnings').style.display = 'none';
+        document.getElementById('warning-list').innerHTML = '';
+        document.getElementById('res-corta').innerHTML = '';
+        document.getElementById('res-larga').innerHTML = '';
+        document.getElementById('resultado-anuncio').textContent = '';
+
+        changeTab('web', true);
+        ocultarFormularios();
     }
 
     function changeTab(tabName, origenAutomatico = false) {
         activeTab = tabName;
-        
-        // RESET ACCESIBLE DE TABS Y PANELES
+
         document.querySelectorAll('.form-section').forEach(el => {
             el.classList.remove('active');
             el.setAttribute('hidden', 'true');
         });
+
         document.querySelectorAll('.tab-btn').forEach(el => {
             el.classList.remove('active');
             el.setAttribute('aria-selected', 'false');
             el.setAttribute('tabindex', '-1');
         });
-        
+
         const activePanel = document.getElementById('form-' + tabName);
         activePanel.classList.add('active');
         activePanel.removeAttribute('hidden');
-        
+
         const btnActivo = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
         if (btnActivo) {
             btnActivo.classList.add('active');
@@ -524,9 +1077,6 @@
             btnActivo.setAttribute('tabindex', '0');
         }
 
-        const primerInput = activePanel.querySelector('input');
-        if (primerInput) primerInput.focus();
-        
         document.getElementById('resultados').hidden = true;
         quitarHighlights();
 
@@ -535,49 +1085,60 @@
             document.getElementById('search-status').style.display = 'none';
             document.getElementById('magic-container').classList.remove('success', 'warning');
             document.getElementById('label-revista-repositorio').innerText = "Nombre de la Revista";
+
+            const primerInput = activePanel.querySelector('input');
+            if (primerInput) primerInput.focus();
         }
     }
 
     function limpiarHTML(str) {
         if (!str) return "";
         return str.replace(/[&<>'"]/g, tag => ({
-            '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            "'": '&#39;',
+            '"': '&quot;'
         }[tag]));
     }
 
     function normalizarTexto(texto) {
         if (!texto) return "";
-        return texto.toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_`~()]/g,"").replace(/\s{2,}/g," ").trim();
+        return texto.toLowerCase()
+            .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, "")
+            .replace(/\s{2,}/g, " ")
+            .trim();
     }
 
     function capitalizarNombres(str) {
         if (!str) return "";
         const isAllUpper = str === str.toUpperCase();
-        
+
         let capitalizado = str.split(/([\s-])/).map(word => {
             if (word === ' ' || word === '-') return word;
-            
-            // ESCUDO ANTI-SIGLAS: Evita deformar palabras como BBC o WHO
+
             if (!isAllUpper && word === word.toUpperCase() && word.length > 1 && /[A-Z]/.test(word)) {
                 return word;
             }
 
             let lowerWord = word.toLowerCase();
-            if (PARTICULAS_APELLIDO.includes(lowerWord)) return lowerWord; 
-            
+            if (PARTICULAS_APELLIDO.includes(lowerWord)) return lowerWord;
+
             if (lowerWord.startsWith('mc') && lowerWord.length > 2) {
                 return 'Mc' + lowerWord.charAt(2).toUpperCase() + lowerWord.slice(3);
             }
+
             if (lowerWord.startsWith("o'") && lowerWord.length > 2) {
                 return "O'" + lowerWord.charAt(2).toUpperCase() + lowerWord.slice(3);
             }
+
             if (lowerWord.startsWith('mac') && lowerWord.length > 4 && !['macho', 'maca', 'macar'].includes(lowerWord.substring(0,5))) {
                 return 'Mac' + lowerWord.charAt(3).toUpperCase() + lowerWord.slice(4);
             }
 
             return lowerWord.charAt(0).toUpperCase() + lowerWord.slice(1);
         }).join('');
-        
+
         return capitalizado.charAt(0).toUpperCase() + capitalizado.slice(1);
     }
 
@@ -592,12 +1153,12 @@
     function formatearAutorCompleto(nombreCompleto) {
         let partes = nombreCompleto.trim().split(/\s+/);
         if (partes.length === 1) return capitalizarNombres(partes[0]);
-        
+
         if (partes.length === 2) {
             return `${capitalizarNombres(partes[1])}, ${extraerIniciales(partes[0])}`;
         }
 
-        let splitIndex = partes.length - 2; 
+        let splitIndex = partes.length - 2;
 
         while (splitIndex > 0 && PARTICULAS_APELLIDO.includes(partes[splitIndex - 1].toLowerCase())) {
             splitIndex--;
@@ -612,18 +1173,22 @@
     function formatearAutorAPI(a) {
         const family = a.family ? capitalizarNombres(a.family) : "";
         const iniciales = a.given ? extraerIniciales(a.given) : "";
+
         if (family && iniciales) return `${family}, ${iniciales}`;
         if (family) return family;
         if (a.name) return capitalizarNombres(a.name);
+
         return "";
     }
 
     function limpiarMetadatoTitulo(titulo) {
         if (!titulo) return "";
         let limpio = titulo.replace(/^(?:[IVXLCDM]+\.—\s+|[0-9]+\.\s+|[A-Z]\.\s+)/i, "").trim();
+
         if (limpio === limpio.toUpperCase() && limpio.length > 5) {
             limpio = limpio.charAt(0).toUpperCase() + limpio.slice(1).toLowerCase();
         }
+
         return limpio;
     }
 
@@ -632,14 +1197,14 @@
         const statusBox = document.getElementById('search-status');
         const magicContainer = document.getElementById('magic-container');
         const btnSearch = document.getElementById('btn-search-main');
-        
+
         if (btnSearch.disabled) return;
 
         if (!input) {
             document.getElementById('origen-datos').style.display = 'none';
             document.getElementById('resultados').hidden = true;
             statusBox.style.display = 'block';
-            statusBox.className = 'status-warning active';
+            statusBox.className = 'active status-warning';
             statusBox.innerText = '⚠️ Por favor, pega un DOI, ISBN, enlace o texto para buscar.';
             magicContainer.classList.remove('success');
             magicContainer.classList.add('warning');
@@ -651,7 +1216,7 @@
         document.getElementById('label-revista-repositorio').innerText = "Nombre de la Revista";
 
         statusBox.style.display = 'block';
-        statusBox.className = 'status-loading active';
+        statusBox.className = 'active status-loading';
         statusBox.innerText = 'Buscando coincidencias en bases de datos académicas... ⏳';
         magicContainer.classList.remove('success', 'warning');
         quitarHighlights();
@@ -673,82 +1238,85 @@
             }
 
             const doiMatch = input.match(/(10\.\d{4,9}\/[-._;()/:A-Z0-9]+)/i);
-            if (doiMatch && input.length < 150) { 
-                await procesarDOI(limpiarDOI(doiMatch[1])); 
-                return; 
+            if (doiMatch && input.length < 150) {
+                await procesarDOI(limpiarDOI(doiMatch[1]));
+                return;
             }
 
             const isbnLimpio = input.replace(/[- ]/g, "");
-            if (isbnLimpio.match(/^(978|979)?\d{9}[\dX]$/i) && input.length < 50) { 
-                await procesarISBN(isbnLimpio); 
-                return; 
+            if (isbnLimpio.match(/^(978|979)?\d{9}[\dX]$/i) && input.length < 50) {
+                await procesarISBN(isbnLimpio);
+                return;
             }
 
             const urlEncoded = encodeURIComponent(input);
-            const response = await fetchConTimeout(`https://api.crossref.org/works?query.bibliographic=${urlEncoded}&rows=3`);
-            
+
+            // Más resultados para mejorar coincidencias
+            const response = await fetchConTimeout(`https://api.crossref.org/works?query.bibliographic=${urlEncoded}&rows=8`);
+
             if (!response.ok) {
                 if (response.status === 429) throw new Error('RateLimit');
                 throw new Error('Network');
             }
-            
+
             const data = await response.json();
 
             if (data.message.items && data.message.items.length > 0) {
-                let mejorItem = data.message.items[0]; 
+                let mejorItem = data.message.items[0];
                 let mejorPuntuacion = -1;
-                const inputNormalizado = normalizarTexto(input); 
-                
+                const inputNormalizado = normalizarTexto(input);
+
                 const yearMatch = input.match(/\b(19|20)\d{2}\b/);
                 const yearInput = yearMatch ? yearMatch[0] : null;
 
                 data.message.items.forEach(item => {
                     let puntos = 0;
+
                     if (item.title) {
                         let tituloPalabras = normalizarTexto(item.title[0]).split(' ');
                         tituloPalabras.forEach(palabra => {
                             if (palabra.length > 3 && inputNormalizado.includes(palabra)) puntos += 2;
                         });
                     }
+
                     if (item.author && item.author.length > 0 && item.author[0].family) {
                         let apellidoNormalizado = normalizarTexto(item.author[0].family);
                         if (inputNormalizado.includes(apellidoNormalizado)) puntos += 3;
                     }
+
                     if (item.DOI && inputNormalizado.includes(normalizarTexto(item.DOI))) puntos += 5;
-                    
+
                     if (item['container-title']) {
                         let revistaNorm = normalizarTexto(item['container-title'][0]);
                         if (inputNormalizado.includes(revistaNorm)) puntos += 4;
                     }
+
                     if (item.volume && inputNormalizado.includes(item.volume.toString())) puntos += 2;
                     if (item.issue && inputNormalizado.includes(item.issue.toString())) puntos += 2;
                     if (item.page && inputNormalizado.includes(item.page.toString())) puntos += 2;
-                    
+
                     let yearItem = item.issued && item.issued['date-parts'] ? item.issued['date-parts'][0][0].toString() : null;
                     if (yearItem && yearInput) {
                         if (yearItem === yearInput) puntos += 4;
-                        else puntos -= 3; 
+                        else puntos -= 3;
                     }
-                    
+
                     if (puntos > mejorPuntuacion) {
                         mejorPuntuacion = puntos;
                         mejorItem = item;
                     }
                 });
 
-                if (mejorPuntuacion < 3) {
-                    throw new Error('WeakMatch');
-                }
+                if (mejorPuntuacion < 3) throw new Error('WeakMatch');
 
                 const item = mejorItem;
-
                 limpiarCampos('paper');
 
                 let autoresAPA = "";
                 if (item.author) {
                     autoresAPA = item.author.map(formatearAutorAPI).filter(Boolean).join("; ");
                 }
-                
+
                 let year = item.issued && item.issued['date-parts'] ? item.issued['date-parts'][0][0] : "";
                 let tituloLimpio = item.title ? limpiarMetadatoTitulo(item.title[0]) : "";
 
@@ -763,12 +1331,17 @@
                 document.getElementById('p-doi').value = item.DOI ? `https://doi.org/${item.DOI}` : "";
 
                 let estadoFinal = mejorPuntuacion > 4 ? 'success' : 'warning';
-                let mensajeExito = mejorPuntuacion > 4 ? "✔️ ¡Coincidencia encontrada! Por favor, verifica los datos." : "⚠️ Coincidencia débil. Revisa atentamente los datos extraídos.";
-                
+                let mensajeExito = mejorPuntuacion > 4
+                    ? "✔️ ¡Coincidencia encontrada! Por favor, verifica los datos."
+                    : "⚠️ Coincidencia débil. Revisa atentamente los datos extraídos.";
+
                 cambiarAModoRevision('paper', mensajeExito, estadoFinal, 'Crossref', 'Artículo');
-            } else { throw new Error('NotFound'); }
+            } else {
+                throw new Error('NotFound');
+            }
         } catch (error) {
-            statusBox.className = 'status-warning active';
+            statusBox.className = 'active status-warning';
+
             if (error.message === 'Timeout') {
                 statusBox.innerText = '⚠️ La base de datos está tardando demasiado en responder. Inténtalo de nuevo.';
             } else if (error.message === 'Network' || error.name === 'TypeError') {
@@ -778,232 +1351,54 @@
             } else {
                 statusBox.innerText = '⚠️ No encontramos coincidencias exactas. Por favor, rellena los campos a mano.';
             }
-            mostrarFormularios(); 
-            changeTab('paper', true);
-            document.getElementById('origen-datos').style.display = 'none';
+
+            let tabFallback = activeTab;
+
+            if ((input.startsWith("http") || input.startsWith("www.")) && !input.includes(" ")) {
+                tabFallback = 'web';
+            } else {
+                const doiDetectado = input.match(/(10\.\d{4,9}\/[-._;()/:A-Z0-9]+)/i);
+                const isbnDetectado = input.replace(/[- ]/g, "").match(/^(978|979)?\d{9}[\dX]$/i);
+
+                if (doiDetectado) tabFallback = 'paper';
+                else if (isbnDetectado) tabFallback = 'libro';
+            }
+
+            changeTab(tabFallback, true);
+            mostrarFormularios();
         } finally {
             btnSearch.disabled = false;
         }
     }
 
-    async function procesarDOI(doi) {
-        doi = limpiarDOI(doi);
-        const statusBox = document.getElementById('search-status');
-        limpiarCampos('paper');
-        try {
-            const response = await fetchConTimeout(`https://api.crossref.org/works/${doi}`);
-            if (!response.ok) {
-                if (response.status === 404) throw new Error('No en Crossref');
-                if (response.status === 429) throw new Error('RateLimit');
-                throw new Error('Network');
-            }
-            const data = await response.json();
-            const item = data.message;
-            
-            let autoresAPA = "";
-            if (item.author) {
-                autoresAPA = item.author.map(formatearAutorAPI).filter(Boolean).join("; ");
-            }
-            
-            let year = item.issued && item.issued['date-parts'] ? item.issued['date-parts'][0][0] : "";
-            let tituloLimpio = item.title ? limpiarMetadatoTitulo(item.title[0]) : "";
-
-            document.getElementById('p-autor').value = autoresAPA;
-            document.getElementById('p-ano').value = year;
-            document.getElementById('p-titulo').value = tituloLimpio;
-            document.getElementById('label-revista-repositorio').innerText = "Nombre de la Revista";
-            document.getElementById('p-revista').value = item['container-title'] ? item['container-title'][0] : "";
-            document.getElementById('p-vol').value = item.volume || "";
-            document.getElementById('p-num').value = item.issue || "";
-            document.getElementById('p-pag').value = item.page || "";
-            document.getElementById('p-doi').value = `https://doi.org/${doi}`;
-
-            cambiarAModoRevision('paper', "✔️ ¡Artículo encontrado por DOI! Verifica los datos extraídos.", 'success', 'Crossref', 'Artículo');
-            
-        } catch (errorCrossref) {
-            if (errorCrossref.message === 'Timeout' || errorCrossref.message === 'RateLimit' || errorCrossref.message === 'Network' || errorCrossref.name === 'TypeError') {
-                statusBox.className = 'status-warning active';
-                if (errorCrossref.message === 'Timeout') {
-                    statusBox.innerText = '⚠️ Crossref está tardando demasiado en responder.';
-                } else {
-                    statusBox.innerText = errorCrossref.message === 'RateLimit' ? '⚠️ La base de datos está saturada. Espera un momento.' : '⚠️ Error de red. Comprueba tu conexión a internet.';
-                }
-                mostrarFormularios();
-                changeTab('paper', true);
-                return;
-            }
-
-            try {
-                limpiarCampos('paper');
-                const responseDC = await fetchConTimeout(`https://api.datacite.org/dois/${doi}`);
-                if (!responseDC.ok) {
-                    if (responseDC.status === 404) throw new Error('No en DataCite');
-                    if (responseDC.status === 429) throw new Error('RateLimit');
-                    throw new Error('Network');
-                }
-                const dataDC = await responseDC.json();
-                const item = dataDC.data.attributes;
-
-                let autoresAPA = "";
-                if (item.creators && item.creators.length > 0) {
-                    autoresAPA = item.creators.map(c => {
-                        if (c.familyName && c.givenName) {
-                            return `${capitalizarNombres(c.familyName)}, ${extraerIniciales(c.givenName)}`;
-                        } else if (c.name) {
-                            return formatearAutorCompleto(c.name); 
-                        }
-                        return "";
-                    }).filter(Boolean).join("; ");
-                }
-
-                let year = item.publicationYear || "";
-                let tituloLimpio = item.titles && item.titles.length > 0 ? limpiarMetadatoTitulo(item.titles[0].title) : "";
-                
-                let revista = "";
-                if (item.publisher) revista = item.publisher;
-
-                document.getElementById('p-autor').value = autoresAPA;
-                document.getElementById('p-ano').value = year;
-                document.getElementById('p-titulo').value = tituloLimpio;
-                document.getElementById('label-revista-repositorio').innerText = "Repositorio / Institución"; 
-                document.getElementById('p-revista').value = revista;
-                document.getElementById('p-vol').value = "";
-                document.getElementById('p-num').value = "";
-                document.getElementById('p-pag').value = "";
-                document.getElementById('p-doi').value = `https://doi.org/${doi}`;
-
-                cambiarAModoRevision('paper', "✔️ ¡Documento encontrado en DataCite (arXiv/Repositorio)! Verifica los datos.", 'success', 'DataCite', 'Preprint/Repositorio');
-
-            } catch (errorDataCite) {
-                statusBox.className = 'status-warning active';
-                if (errorDataCite.message === 'Timeout') {
-                    statusBox.innerText = '⚠️ La búsqueda ha excedido el tiempo de espera.';
-                } else if (errorDataCite.message === 'RateLimit') {
-                    statusBox.innerText = '⚠️ DataCite está recibiendo demasiadas peticiones. Espera un momento.';
-                } else if (errorDataCite.name === 'TypeError' || errorDataCite.message === 'Network') {
-                     statusBox.innerText = '⚠️ Error de conexión al buscar el DOI. Revisa tu internet.';
-                } else {
-                     statusBox.innerText = '⚠️ Formato de DOI detectado, pero no hemos podido localizar sus datos en Crossref ni DataCite. Por favor, rellena los campos manualmente.';
-                }
-                mostrarFormularios();
-                changeTab('paper', true);
-                document.getElementById('origen-datos').style.display = 'none';
-            }
-        }
-    }
-
-    async function procesarISBN(isbn) {
-        const statusBox = document.getElementById('search-status');
-        limpiarCampos('libro');
-        try {
-            const response = await fetchConTimeout(`https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`);
-            if (!response.ok) {
-                 if (response.status === 429) throw new Error('RateLimit');
-                 throw new Error('Network');
-            }
-            const data = await response.json();
-
-            if (data.items && data.items.length > 0) {
-                const item = data.items[0].volumeInfo;
-                let autoresAPA = "";
-                
-                if (item.authors) {
-                    autoresAPA = item.authors.map(a => formatearAutorCompleto(a)).join("; ");
-                }
-
-                let yearMatch = item.publishedDate ? item.publishedDate.match(/\d{4}/) : [""];
-                let tituloLimpio = item.title ? limpiarMetadatoTitulo(item.title) : "";
-                
-                document.getElementById('l-autor').value = autoresAPA;
-                document.getElementById('l-ano').value = yearMatch ? yearMatch[0] : "";
-                document.getElementById('l-titulo').value = tituloLimpio;
-                document.getElementById('l-editorial').value = item.publisher || "";
-
-                cambiarAModoRevision('libro', "✔️ ¡Libro encontrado! Verifica los datos en el formulario.", 'success', 'Google Books', 'Libro');
-            } else { throw new Error('NotFound'); }
-        } catch (error) {
-            statusBox.className = 'status-error active';
-            if (error.message === 'Timeout') {
-                 statusBox.innerText = '⚠️ Google Books está tardando demasiado en responder.';
-            } else if (error.message === 'Network' || error.name === 'TypeError') {
-                 statusBox.innerText = '⚠️ Error de red. No se pudo conectar con Google Books.';
-            } else if (error.message === 'RateLimit') {
-                 statusBox.innerText = '⚠️ El servidor de Google Books está saturado. Espera un poco.';
-            } else {
-                 statusBox.innerText = '❌ ISBN no encontrado en Google Books. Rellénalo manualmente.';
-            }
-            mostrarFormularios();
-            changeTab('libro', true);
-            document.getElementById('origen-datos').style.display = 'none';
-        }
-    }
-
-    function procesarURL(url) {
-        limpiarCampos('web');
-        const statusBox = document.getElementById('search-status');
-        const magicContainer = document.getElementById('magic-container');
-
-        try {
-            let urlLimpia = limpiarUrlParaCita(url);
-            let urlObj = new URL(urlLimpia);
-            
-            let dominiosConocidos = {
-                "who.int": "Organización Mundial de la Salud (OMS)", 
-                "nature.com": "Nature", 
-                "pubmed.ncbi.nlm.nih.gov": "PubMed", 
-                "wikipedia.org": "Wikipedia",
-                "xataka.com": "Xataka",
-                "elpais.com": "El País",
-                "elmundo.es": "El Mundo",
-                "bbc.com": "BBC News"
-            };
-            let host = urlObj.hostname.replace("www.", "");
-            let sitioHumanizado = dominiosConocidos[host.toLowerCase()] || capitalizarNombres(host.split('.')[0]);
-
-            document.getElementById('w-sitio').value = sitioHumanizado;
-            document.getElementById('w-url').value = urlLimpia;
-            
-            cambiarAModoRevision('web', "⚠️ Sitio web detectado. Añade tú el Título y Autor para completar la cita.", 'warning', 'Extracción manual', 'Página Web');
-        } catch(e) {
-            statusBox.style.display = 'block';
-            statusBox.className = 'status-warning active';
-            statusBox.innerText = '⚠️ La URL introducida no parece ser válida. Por favor, revísala y rellena los datos a mano.';
-            magicContainer.classList.remove('success');
-            magicContainer.classList.add('warning');
-            mostrarFormularios();
-            changeTab('web', true);
-            document.getElementById('origen-datos').style.display = 'none';
-        }
-    }
-
     function cambiarAModoRevision(tab, mensaje, estado = 'success', origen = '', tipo = '') {
-        mostrarFormularios(); 
-        changeTab(tab, true); 
+        changeTab(tab, true);
+        mostrarFormularios();
+
         const statusBox = document.getElementById('search-status');
         const magicContainer = document.getElementById('magic-container');
         const origenDatosBox = document.getElementById('origen-datos');
-        
+
         statusBox.style.display = 'block';
         magicContainer.classList.remove('success', 'warning');
-        statusBox.className = 'active'; 
-        
+
         let highlightClass = '';
 
         if (estado === 'success') {
-            statusBox.classList.add('status-success');
+            statusBox.className = 'active status-success';
             magicContainer.classList.add('success');
             highlightClass = 'highlight-success';
         } else if (estado === 'warning') {
-            statusBox.classList.add('status-warning');
+            statusBox.className = 'active status-warning';
             magicContainer.classList.add('warning');
             highlightClass = 'highlight-warning';
         }
 
         statusBox.innerText = mensaje;
-        
+
         if (origen && tipo) {
-            origenDatosBox.textContent = ''; 
-            
+            origenDatosBox.textContent = '';
+
             const icono = document.createTextNode('📌 ');
             const strongTipo = document.createElement('strong');
             strongTipo.textContent = 'Tipo detectado:';
@@ -1018,7 +1413,7 @@
             origenDatosBox.appendChild(textoTipo);
             origenDatosBox.appendChild(strongFuente);
             origenDatosBox.appendChild(textoFuente);
-            
+
             origenDatosBox.style.display = 'flex';
         } else {
             origenDatosBox.style.display = 'none';
@@ -1029,18 +1424,275 @@
                 input.classList.remove('highlight-success', 'highlight-warning');
                 void input.offsetWidth;
                 input.classList.add(highlightClass);
-                
-                if(input.highlightTimeout) clearTimeout(input.highlightTimeout);
+
+                if (input.highlightTimeout) clearTimeout(input.highlightTimeout);
                 input.highlightTimeout = setTimeout(() => input.classList.remove(highlightClass), 3500);
             }
         });
     }
 
-    function quitarHighlights() { 
+    async function procesarDOI(doi) {
+        doi = limpiarDOI(doi);
+        const statusBox = document.getElementById('search-status');
+        const origenDatosBox = document.getElementById('origen-datos');
+
+        limpiarCampos('paper');
+        origenDatosBox.style.display = 'none';
+
+        const rellenarPaper = (item, fuente = 'Crossref', tipo = 'Artículo') => {
+            let autoresAPA = "";
+
+            if (item.author && item.author.length > 0) {
+                autoresAPA = item.author.map(formatearAutorAPI).filter(Boolean).join("; ");
+            } else if (item.creators && item.creators.length > 0) {
+                autoresAPA = item.creators.map(c => {
+                    if (c.familyName && c.givenName) {
+                        return `${capitalizarNombres(c.familyName)}, ${extraerIniciales(c.givenName)}`;
+                    } else if (c.name) {
+                        return formatearAutorCompleto(c.name);
+                    }
+                    return "";
+                }).filter(Boolean).join("; ");
+            }
+
+            const year =
+                (item.issued && item.issued['date-parts'] && item.issued['date-parts'][0] && item.issued['date-parts'][0][0]) ||
+                item.publicationYear ||
+                "";
+
+            const tituloLimpio =
+                (item.title && Array.isArray(item.title) && item.title[0] ? limpiarMetadatoTitulo(item.title[0]) : "") ||
+                (item.titles && item.titles.length > 0 ? limpiarMetadatoTitulo(item.titles[0].title) : "");
+
+            const revista =
+                (item['container-title'] && item['container-title'][0]) ||
+                item.publisher ||
+                "";
+
+            document.getElementById('p-autor').value = autoresAPA;
+            document.getElementById('p-ano').value = year;
+            document.getElementById('p-titulo').value = tituloLimpio;
+            document.getElementById('label-revista-repositorio').innerText =
+                tipo === 'Artículo' ? "Nombre de la Revista" : "Repositorio / Institución";
+            document.getElementById('p-revista').value = revista;
+            document.getElementById('p-vol').value = item.volume || "";
+            document.getElementById('p-num').value = item.issue || "";
+            document.getElementById('p-pag').value = item.page || "";
+            document.getElementById('p-doi').value = `https://doi.org/${doi}`;
+
+            // Si viene de repositorio/preprint, aviso más prudente
+            const esRepositorio = fuente === 'DataCite' || tipo !== 'Artículo';
+            const mensajeRevision = esRepositorio
+                ? "⚠️ Documento encontrado en repositorio/preprint. Revisa manualmente el formato APA final."
+                : "✔️ ¡Artículo encontrado por DOI! Verifica los datos extraídos.";
+
+            cambiarAModoRevision(
+                'paper',
+                mensajeRevision,
+                esRepositorio ? 'warning' : 'success',
+                fuente,
+                tipo
+            );
+        };
+
+        try {
+            const responseCR = await fetchConTimeout(`https://api.crossref.org/works/${doi}`);
+
+            if (!responseCR.ok) {
+                if (responseCR.status === 404) throw new Error('CrossrefNotFound');
+                if (responseCR.status === 429) throw new Error('CrossrefRateLimit');
+                throw new Error('CrossrefError');
+            }
+
+            const dataCR = await responseCR.json();
+            rellenarPaper(dataCR.message, 'Crossref', 'Artículo');
+            return;
+        } catch (errorCR) {
+            try {
+                const responseDC = await fetchConTimeout(`https://api.datacite.org/dois/${doi}`);
+
+                if (!responseDC.ok) {
+                    if (responseDC.status === 404) throw new Error('DataCiteNotFound');
+                    if (responseDC.status === 429) throw new Error('DataCiteRateLimit');
+                    throw new Error('DataCiteError');
+                }
+
+                const dataDC = await responseDC.json();
+                rellenarPaper(dataDC.data.attributes, 'DataCite', 'Preprint/Repositorio');
+                return;
+            } catch (errorDC) {
+                statusBox.className = 'active status-warning';
+
+                if (errorCR.message === 'CrossrefRateLimit' || errorDC.message === 'DataCiteRateLimit') {
+                    statusBox.innerText = '⚠️ Las bases de datos del DOI están saturadas. Puedes rellenar los datos a mano.';
+                } else if (
+                    errorCR.message === 'Timeout' ||
+                    errorDC.message === 'Timeout' ||
+                    errorCR.name === 'TypeError' ||
+                    errorDC.name === 'TypeError'
+                ) {
+                    statusBox.innerText = '⚠️ Error de conexión al buscar el DOI. Revisa tu internet o rellena los datos manualmente.';
+                } else {
+                    statusBox.innerText = '⚠️ No hemos podido localizar este DOI automáticamente. Puedes rellenar los datos a mano.';
+                }
+
+                changeTab('paper', true);
+                mostrarFormularios();
+                origenDatosBox.style.display = 'none';
+            }
+        }
+    }
+
+    async function procesarISBN(isbn) {
+        const statusBox = document.getElementById('search-status');
+        const origenDatosBox = document.getElementById('origen-datos');
+
+        limpiarCampos('libro');
+        origenDatosBox.style.display = 'none';
+
+        const rellenarLibro = (item, fuente = 'Google Books') => {
+            let autoresAPA = "";
+
+            if (item.authors && item.authors.length > 0) {
+                autoresAPA = item.authors.map(a => {
+                    const nombre = typeof a === 'string' ? a : a.name;
+                    return formatearAutorCompleto(nombre);
+                }).join("; ");
+            }
+
+            const fechaRaw = item.publishedDate || item.publish_date || "";
+            const yearMatch = fechaRaw ? fechaRaw.match(/\d{4}/) : null;
+            const tituloLimpio = item.title ? limpiarMetadatoTitulo(item.title) : "";
+            const editorial =
+                item.publisher ||
+                (item.publishers && item.publishers.length > 0
+                    ? (typeof item.publishers[0] === 'string' ? item.publishers[0] : item.publishers[0].name)
+                    : "");
+
+            document.getElementById('l-autor').value = autoresAPA;
+            document.getElementById('l-ano').value = yearMatch ? yearMatch[0] : "";
+            document.getElementById('l-titulo').value = tituloLimpio;
+            document.getElementById('l-editorial').value = editorial;
+
+            cambiarAModoRevision(
+                'libro',
+                fuente === 'Google Books'
+                    ? "✔️ ¡Libro encontrado! Verifica los datos en el formulario."
+                    : "✔️ ¡Libro encontrado en OpenLibrary! Verifica los datos.",
+                'success',
+                fuente,
+                'Libro'
+            );
+        };
+
+        let errorGB = null;
+
+        try {
+            const responseGB = await fetchConTimeout(`https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`);
+
+            if (!responseGB.ok) {
+                if (responseGB.status === 429) throw new Error('GoogleBooksRateLimit');
+                throw new Error('GoogleBooksError');
+            }
+
+            const dataGB = await responseGB.json();
+
+            if (dataGB.items && dataGB.items.length > 0) {
+                rellenarLibro(dataGB.items[0].volumeInfo, 'Google Books');
+                return;
+            }
+
+            throw new Error('GoogleBooksNotFound');
+        } catch (err) {
+            errorGB = err;
+        }
+
+        try {
+            const responseOL = await fetchConTimeout(`https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`);
+
+            if (!responseOL.ok) {
+                if (responseOL.status === 429) throw new Error('OpenLibraryRateLimit');
+                throw new Error('OpenLibraryError');
+            }
+
+            const dataOL = await responseOL.json();
+            const bookKey = `ISBN:${isbn}`;
+
+            if (dataOL[bookKey]) {
+                rellenarLibro(dataOL[bookKey], 'OpenLibrary');
+                return;
+            }
+
+            throw new Error('OpenLibraryNotFound');
+        } catch (errorOL) {
+            statusBox.className = 'active status-warning';
+
+            if (
+                errorGB?.message === 'Timeout' ||
+                errorOL.message === 'Timeout' ||
+                errorGB?.name === 'TypeError' ||
+                errorOL.name === 'TypeError'
+            ) {
+                statusBox.innerText = '⚠️ Error de conexión al buscar el ISBN. Revisa tu internet o rellena los datos manualmente.';
+            } else if (
+                errorGB?.message === 'GoogleBooksRateLimit' ||
+                errorOL.message === 'OpenLibraryRateLimit'
+            ) {
+                statusBox.innerText = '⚠️ Los servidores de búsqueda de libros están saturados. Puedes rellenar los datos a mano.';
+            } else {
+                statusBox.innerText = '⚠️ No hemos podido recuperar este ISBN automáticamente. Puedes rellenar los datos a mano.';
+            }
+
+            changeTab('libro', true);
+            mostrarFormularios();
+            origenDatosBox.style.display = 'none';
+        }
+    }
+
+    function procesarURL(url) {
+        limpiarCampos('web');
+        const statusBox = document.getElementById('search-status');
+        const magicContainer = document.getElementById('magic-container');
+
+        try {
+            let urlLimpia = limpiarUrlParaCita(url);
+            let urlObj = new URL(urlLimpia);
+
+            let dominiosConocidos = {
+                "who.int": "Organización Mundial de la Salud (OMS)",
+                "nature.com": "Nature",
+                "pubmed.ncbi.nlm.nih.gov": "PubMed",
+                "wikipedia.org": "Wikipedia",
+                "xataka.com": "Xataka",
+                "elpais.com": "El País",
+                "elmundo.es": "El Mundo",
+                "bbc.com": "BBC News"
+            };
+
+            let host = urlObj.hostname.replace("www.", "");
+            let sitioHumanizado = dominiosConocidos[host.toLowerCase()] || capitalizarNombres(host.split('.')[0]);
+
+            document.getElementById('w-sitio').value = sitioHumanizado;
+            document.getElementById('w-url').value = urlLimpia;
+
+            cambiarAModoRevision('web', "⚠️ Sitio web detectado. Añade tú el Título y Autor para completar la cita.", 'warning', 'Extracción manual', 'Página Web');
+        } catch(e) {
+            statusBox.style.display = 'block';
+            statusBox.className = 'active status-warning';
+            statusBox.innerText = '⚠️ La URL introducida no parece ser válida. Por favor, revísala y rellena los datos a mano.';
+            magicContainer.classList.remove('success');
+            magicContainer.classList.add('warning');
+            changeTab('web', true);
+            mostrarFormularios();
+            document.getElementById('origen-datos').style.display = 'none';
+        }
+    }
+
+    function quitarHighlights() {
         document.querySelectorAll('input').forEach(input => {
             input.classList.remove('highlight-success', 'highlight-warning');
-            if(input.highlightTimeout) clearTimeout(input.highlightTimeout);
-        }); 
+            if (input.highlightTimeout) clearTimeout(input.highlightTimeout);
+        });
     }
 
     function abreviarTitulo(titulo) {
@@ -1056,7 +1708,7 @@
             if (tipo === 'libro') return `(<i>${tituloCorto}</i>, ${ano})`;
             return `("${tituloCorto}", ${ano})`;
         }
-        
+
         let listaAutores = cadenaAutores.split(';').map(a => a.trim()).filter(a => a);
         if (listaAutores.length === 1) return `(${listaAutores[0].split(',')[0].trim()}, ${ano})`;
         if (listaAutores.length === 2) return `(${listaAutores[0].split(',')[0].trim()} & ${listaAutores[1].split(',')[0].trim()}, ${ano})`;
@@ -1064,7 +1716,7 @@
     }
 
     function formatearAutoresLarga(cadenaAutores) {
-        if (!cadenaAutores) return ''; 
+        if (!cadenaAutores) return '';
         let listaAutores = cadenaAutores.split(';').map(a => a.trim()).filter(a => a);
         if (listaAutores.length === 1) return listaAutores[0];
         let ultimosDos = listaAutores.slice(-2).join(', & ');
@@ -1075,7 +1727,7 @@
 
     function validarAno(anoTexto) {
         if (!anoTexto || anoTexto === 's.f.') return true;
-        return /^\d{4}$/.test(anoTexto); 
+        return /^\d{4}$/.test(anoTexto);
     }
 
     function generarCita() {
@@ -1093,19 +1745,19 @@
             const titulo = limpiar('w-titulo') || 'Sin título';
             const sitio = limpiar('w-sitio');
             let url = limpiar('w-url');
-            
+
             if (url) url = limpiarUrlParaCita(url);
-            
-            if(!autorRaw) avisos.push("No hay autor. Se usará el título en su lugar según normativa APA.");
-            if(!validarAno(ano)) avisos.push("El campo año no parece tener un formato válido (ej. 2024).");
-            if(titulo === 'Sin título') avisos.push("Falta el título de la página.");
-            if(!url) avisos.push("Falta la URL del enlace.");
+
+            if (!autorRaw) avisos.push("No hay autor. Se usará el título en su lugar según normativa APA.");
+            if (!validarAno(ano)) avisos.push("El campo año no parece tener un formato válido (ej. 2024).");
+            if (titulo === 'Sin título') avisos.push("Falta el título de la página.");
+            if (!url) avisos.push("Falta la URL del enlace.");
 
             citaCorta = generarCitaCorta(autorRaw, ano, titulo, 'web');
             let autorFormateado = formatearAutoresLarga(autorRaw);
             let parteSitio = sitio ? `${sitio}. ` : '';
             let parteUrl = url ? `${url}` : '';
-            
+
             if (!autorFormateado) citaLarga = `<i>${titulo}</i>. (${ano}). ${parteSitio}${parteUrl}`;
             else citaLarga = `${autorFormateado}. (${ano}). <i>${titulo}</i>. ${parteSitio}${parteUrl}`;
         } 
@@ -1114,16 +1766,16 @@
             const ano = limpiar('l-ano') || 's.f.';
             const titulo = limpiar('l-titulo') || 'Sin título';
             const editorial = limpiar('l-editorial');
-            
-            if(!autorRaw) avisos.push("No hay autor. Se usará el título en su lugar.");
-            if(!validarAno(ano)) avisos.push("El campo año no parece tener un formato válido (ej. 2024).");
-            if(titulo === 'Sin título') avisos.push("Falta el título del libro.");
-            if(!editorial) avisos.push("Falta la editorial.");
+
+            if (!autorRaw) avisos.push("No hay autor. Se usará el título en su lugar.");
+            if (!validarAno(ano)) avisos.push("El campo año no parece tener un formato válido (ej. 2024).");
+            if (titulo === 'Sin título') avisos.push("Falta el título del libro.");
+            if (!editorial) avisos.push("Falta la editorial.");
 
             citaCorta = generarCitaCorta(autorRaw, ano, titulo, 'libro');
             let autorFormateado = formatearAutoresLarga(autorRaw);
             let parteEditorial = editorial ? `${editorial}.` : '';
-            
+
             if (!autorFormateado) citaLarga = `<i>${titulo}</i>. (${ano}). ${parteEditorial}`;
             else citaLarga = `${autorFormateado}. (${ano}). <i>${titulo}</i>. ${parteEditorial}`;
         }
@@ -1135,18 +1787,18 @@
             const vol = limpiar('p-vol');
             const num = limpiar('p-num');
             const pag = limpiar('p-pag');
-            
-            if(!autorRaw) avisos.push("No hay autor. Se usará el título en su lugar.");
-            if(!validarAno(ano)) avisos.push("El campo año no parece tener un formato válido (ej. 2024).");
-            if(titulo === 'Sin título') avisos.push("Falta el título del artículo.");
-            if(!revista) avisos.push("Falta el nombre de la revista o repositorio.");
-            if(!doi) avisos.push("Recomendación: Si el artículo tiene DOI oficial, es preferible añadirlo.");
 
-            if(doi && !doi.startsWith('http')) doi = 'https://doi.org/' + doi;
-            
+            if (!autorRaw) avisos.push("No hay autor. Se usará el título en su lugar.");
+            if (!validarAno(ano)) avisos.push("El campo año no parece tener un formato válido (ej. 2024).");
+            if (titulo === 'Sin título') avisos.push("Falta el título del artículo.");
+            if (!revista) avisos.push("Falta el nombre de la revista o repositorio.");
+            if (!doi) avisos.push("Recomendación: Si el artículo tiene DOI oficial, es preferible añadirlo.");
+
+            if (doi && !doi.startsWith('http')) doi = 'https://doi.org/' + doi;
+
             citaCorta = generarCitaCorta(autorRaw, ano, titulo, 'paper');
             let autorFormateado = formatearAutoresLarga(autorRaw);
-            
+
             let bloqueRevista = "";
             if (revista) {
                 bloqueRevista = `<i>${revista}`;
@@ -1165,10 +1817,10 @@
                 citaLarga = `${autorFormateado}. (${ano}). ${titulo}. ${bloqueRevista}${parteDoi}`.trim();
             }
         }
-        
+
         const cajaAvisos = document.getElementById('validation-warnings');
         const listaAvisos = document.getElementById('warning-list');
-        
+
         if (avisos.length > 0) {
             listaAvisos.innerHTML = avisos.map(aviso => `<li>${aviso}</li>`).join('');
             cajaAvisos.style.display = 'block';
@@ -1176,41 +1828,47 @@
             cajaAvisos.style.display = 'none';
         }
 
+        citaLarga = citaLarga.replace(/\s+\./g, '.').replace(/\s+/g, ' ').trim();
+
         document.getElementById('res-corta').innerHTML = citaCorta;
         document.getElementById('res-larga').innerHTML = citaLarga;
         document.getElementById('resultados').hidden = false;
-        
+
         document.getElementById('resultado-anuncio').textContent = 'Cita APA generada correctamente.';
         document.getElementById('resultados').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    function copiarTexto(idElemento, boton) {
-        const texto = document.getElementById(idElemento).innerText;
+    // Copia HTML + texto plano para conservar cursivas cuando sea posible
+    async function copiarTexto(idElemento, boton) {
+        const elemento = document.getElementById(idElemento);
+        const textoPlano = elemento.innerText;
+        const html = elemento.innerHTML;
         const textoOriginal = boton.innerHTML;
 
-        if (!navigator.clipboard || !navigator.clipboard.writeText) {
-            boton.classList.remove('copied');
-            boton.innerHTML = "Copiado no compatible ❌";
-            setTimeout(() => {
-                boton.innerHTML = textoOriginal;
-            }, 2000);
-            return;
-        }
+        try {
+            if (navigator.clipboard && window.ClipboardItem) {
+                const item = new ClipboardItem({
+                    'text/plain': new Blob([textoPlano], { type: 'text/plain' }),
+                    'text/html': new Blob([html], { type: 'text/html' })
+                });
+                await navigator.clipboard.write([item]);
+            } else if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(textoPlano);
+            } else {
+                throw new Error('Clipboard no compatible');
+            }
 
-        navigator.clipboard.writeText(texto).then(() => {
             boton.innerHTML = "¡Copiado! ✅";
             boton.classList.add('copied');
-            setTimeout(() => {
-                boton.innerHTML = textoOriginal;
-                boton.classList.remove('copied');
-            }, 2000);
-        }).catch(() => {
+        } catch {
             boton.classList.remove('copied');
             boton.innerHTML = "No se pudo copiar ❌";
-            setTimeout(() => {
-                boton.innerHTML = textoOriginal;
-            }, 2000);
-        });
+        }
+
+        setTimeout(() => {
+            boton.innerHTML = textoOriginal;
+            boton.classList.remove('copied');
+        }, 2000);
     }
 </script>
 
