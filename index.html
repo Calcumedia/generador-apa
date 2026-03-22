@@ -734,7 +734,6 @@
         </p>
 
         <div class="search-group">
-            <!-- Accesibilidad: label oculto para lector de pantalla -->
             <label for="magic-input" class="sr-only">Introduce DOI, ISBN, URL o referencia bibliográfica</label>
             <textarea id="magic-input" placeholder="Ej: Pega aquí tu DOI (10.xxx), ISBN, texto académico o URL..."></textarea>
             <button id="btn-search-main" class="btn-search" type="button" onclick="buscarDatosMagicos()">Buscar coincidencias y Autocompletar</button>
@@ -799,7 +798,6 @@
             <ul id="warning-list"></ul>
         </div>
 
-        <!-- Aviso general de revisión -->
         <div class="info-cita-textual" style="margin-bottom: 20px;">
             ℹ️ <strong>Importante:</strong> Esta referencia ha sido generada automáticamente. Verifica siempre autores, año, título, tipo de documento y formato final antes de entregarla.
         </div>
@@ -950,7 +948,6 @@
         });
     }
 
-    // Admite DOI normal, URL doi.org y prefijo doi:
     function limpiarDOI(doi) {
         if (!doi) return "";
 
@@ -976,7 +973,6 @@
         }
     }
 
-    // Enfoca el primer campo vacío si existe
     function mostrarFormularios(enfocar = true) {
         const contenedor = document.getElementById('contenedor-formularios');
         const btnManual = document.getElementById('btn-toggle-manual');
@@ -1048,6 +1044,7 @@
         document.getElementById('res-larga').innerHTML = '';
         document.getElementById('resultado-anuncio').textContent = '';
 
+        activeTab = 'web';
         changeTab('web', true);
         ocultarFormularios();
     }
@@ -1250,8 +1247,6 @@
             }
 
             const urlEncoded = encodeURIComponent(input);
-
-            // Más resultados para mejorar coincidencias
             const response = await fetchConTimeout(`https://api.crossref.org/works?query.bibliographic=${urlEncoded}&rows=8`);
 
             if (!response.ok) {
@@ -1373,7 +1368,7 @@
 
     function cambiarAModoRevision(tab, mensaje, estado = 'success', origen = '', tipo = '') {
         changeTab(tab, true);
-        mostrarFormularios();
+        mostrarFormularios(false);
 
         const statusBox = document.getElementById('search-status');
         const magicContainer = document.getElementById('magic-container');
@@ -1480,7 +1475,6 @@
             document.getElementById('p-pag').value = item.page || "";
             document.getElementById('p-doi').value = `https://doi.org/${doi}`;
 
-            // Si viene de repositorio/preprint, aviso más prudente
             const esRepositorio = fuente === 'DataCite' || tipo !== 'Artículo';
             const mensajeRevision = esRepositorio
                 ? "⚠️ Documento encontrado en repositorio/preprint. Revisa manualmente el formato APA final."
@@ -1838,7 +1832,6 @@
         document.getElementById('resultados').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    // Copia HTML + texto plano para conservar cursivas cuando sea posible
     async function copiarTexto(idElemento, boton) {
         const elemento = document.getElementById(idElemento);
         const textoPlano = elemento.innerText;
