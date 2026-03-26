@@ -752,7 +752,7 @@
         <div id="search-status" role="status" aria-live="polite"></div>
     </div>
 
-    <button class="btn-toggle-manual" id="btn-toggle-manual" type="button" aria-expanded="false" aria-controls="contenedor-formularios" onclick="mostrarFormularios()">
+    <button class="btn-toggle-manual" id="btn-toggle-manual" type="button" aria-expanded="false" aria-controls="contenedor-formularios" onclick="registrarEvento('usar_formulario_manual', { tipo_documento: activeTab }); mostrarFormularios()">
         ✍️ Prefiero introducir o revisar los datos manualmente
     </button>
 
@@ -813,7 +813,7 @@
 
         <div class="result-header">
             <div class="result-title">1. Cita en el texto</div>
-            <button class="btn-copy" type="button" aria-label="Copiar cita en el texto" onclick="copiarTexto('res-corta', this)">📋 Copiar cita</button>
+            <button class="btn-copy" type="button" aria-label="Copiar cita en el texto" onclick="copiarTexto('res-corta', this, 'cita_texto')">📋 Copiar cita</button>
         </div>
         <div class="cita-corta" id="res-corta"></div>
 
@@ -823,7 +823,7 @@
         
         <div class="result-header">
             <div class="result-title">2. Referencia Bibliográfica</div>
-            <button class="btn-copy" type="button" aria-label="Copiar referencia bibliográfica" onclick="copiarTexto('res-larga', this)">📋 Copiar referencia</button>
+            <button class="btn-copy" type="button" aria-label="Copiar referencia bibliográfica" onclick="copiarTexto('res-larga', this, 'referencia_bibliografica')">📋 Copiar referencia</button>
         </div>
         <div class="sangria-francesa" id="res-larga"></div>
     </div>
@@ -832,18 +832,18 @@
 <div class="resources-wrapper">
     <h3 class="resources-title">🎓 Recursos recomendados para TFG/TFM</h3>
     <div class="resource-grid">
-        <a href="https://www.amazon.es/joinstudent?tag=calcumedia-21" target="_blank" rel="noopener noreferrer" class="amazon-card">
+        <a href="https://www.amazon.es/joinstudent?tag=calcumedia-21" target="_blank" rel="noopener noreferrer" class="amazon-card" onclick="registrarEvento('clic_recurso_externo', { destino: 'amazon_prime_student' })">
             <div class="amazon-text">
                 <p class="amazon-title">Amazon <span>Prime Student</span></p>
                 <p class="amazon-subtitle">Prueba 90 días gratis. Envíos rápidos en material y Prime Video.</p>
             </div>
             <div class="amazon-btn">Ver ventaja</div>
         </a>
-        <a href="https://apastyle.apa.org/style-grammar-guidelines/references/examples" target="_blank" rel="noopener noreferrer" class="resource-card-secondary">
+        <a href="https://apastyle.apa.org/style-grammar-guidelines/references/examples" target="_blank" rel="noopener noreferrer" class="resource-card-secondary" onclick="registrarEvento('clic_recurso_externo', { destino: 'guia_oficial_apa' })">
             <p class="resource-title-sec"><span class="resource-icon">📘</span> Guía oficial de Normas APA (En inglés)</p>
             <span class="resource-icon">→</span>
         </a>
-        <a href="https://www.scribbr.es/detector-de-plagio/" target="_blank" rel="noopener noreferrer" class="resource-card-secondary">
+        <a href="https://www.scribbr.es/detector-de-plagio/" target="_blank" rel="noopener noreferrer" class="resource-card-secondary" onclick="registrarEvento('clic_recurso_externo', { destino: 'scribbr_plagio' })">
             <p class="resource-title-sec"><span class="resource-icon">✅</span> Verificador de plagio de Scribbr</p>
             <span class="resource-icon">→</span>
         </a>
@@ -884,6 +884,25 @@
 <script>
     let activeTab = 'web';
     const PARTICULAS_APELLIDO = ['de', 'del', 'la', 'las', 'los', 'y', 'van', 'von', 'der', 'da', 'di', 'do'];
+
+    function registrarEvento(nombreEvento, parametros = {}) {
+        if (typeof gtag === 'function') {
+            gtag('event', nombreEvento, parametros);
+        }
+    }
+
+    function detectarTipoEntrada(valor) {
+        if (!valor) return 'vacio';
+
+        const texto = valor.trim();
+        const isbnLimpio = texto.replace(/[- ]/g, "");
+
+        if ((texto.startsWith('http') || texto.startsWith('www.')) && !texto.includes(" ")) return 'url';
+        if (texto.match(/(10\.\d{4,9}\/[-._;()/:A-Z0-9]+)/i)) return 'doi';
+        if (isbnLimpio.match(/^(978|979)?\d{9}[\dX]$/i)) return 'isbn';
+
+        return 'texto_bibliografico';
+    }
 
     document.addEventListener("DOMContentLoaded", function() {
         const magicInput = document.getElementById('magic-input');
@@ -1032,6 +1051,10 @@
     }
 
     function limpiarTodo() {
+        registrarEvento('limpiar_todo', {
+            tipo_documento: activeTab
+        });
+
         document.getElementById('magic-input').value = '';
         document.getElementById('resultados').hidden = true;
         document.getElementById('origen-datos').style.display = 'none';
@@ -1217,6 +1240,10 @@
             return;
         }
 
+        registrarEvento('buscar_referencia', {
+            tipo_entrada: detectarTipoEntrada(input)
+        });
+
         document.getElementById('origen-datos').style.display = 'none';
         document.getElementById('resultados').hidden = true;
         document.getElementById('label-revista-repositorio').innerText = "Nombre de la Revista";
@@ -1344,6 +1371,10 @@
                 throw new Error('NotFound');
             }
         } catch (error) {
+            registrarEvento('autocompletado_fallido', {
+                tipo_entrada: detectarTipoEntrada(input)
+            });
+
             statusBox.className = 'active status-warning';
 
             if (error.message === 'Timeout') {
@@ -1421,6 +1452,13 @@
             origenDatosBox.style.display = 'flex';
         } else {
             origenDatosBox.style.display = 'none';
+        }
+
+        if (origen && tipo && origen !== 'Extracción manual') {
+            registrarEvento('autocompletado_exitoso', {
+                fuente: origen.toLowerCase(),
+                tipo_documento: tipo.toLowerCase()
+            });
         }
 
         document.querySelectorAll(`#form-${tab} input`).forEach(input => {
@@ -1837,11 +1875,17 @@
         document.getElementById('res-larga').innerHTML = citaLarga;
         document.getElementById('resultados').hidden = false;
 
+        registrarEvento('generar_cita', {
+            tipo_documento: activeTab,
+            con_avisos: avisos.length > 0 ? 'si' : 'no',
+            con_doi: activeTab === 'paper' && doi ? 'si' : 'no'
+        });
+
         document.getElementById('resultado-anuncio').textContent = 'Cita APA generada correctamente.';
         document.getElementById('resultados').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    async function copiarTexto(idElemento, boton) {
+    async function copiarTexto(idElemento, boton, tipoCopia = 'desconocido') {
         const elemento = document.getElementById(idElemento);
         const textoPlano = elemento.innerText;
         const html = elemento.innerHTML;
@@ -1859,6 +1903,11 @@
             } else {
                 throw new Error('Clipboard no compatible');
             }
+
+            registrarEvento('copiar_resultado', {
+                tipo_copia: tipoCopia,
+                tipo_documento: activeTab
+            });
 
             boton.innerHTML = "¡Copiado! ✅";
             boton.classList.add('copied');
