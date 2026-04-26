@@ -1,0 +1,3305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJ2WS9XR5F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-RJ2WS9XR5F');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador APA 7 Automático | Citas para TFG y TFM</title>
+    <meta name="description" content="Genera citas y referencias bibliográficas en formato APA 7 gratis. Crea cita parentética, narrativa, textual y bibliografía para TFG, TFM y trabajos universitarios.">
+    <link rel="canonical" href="https://calcumedia.github.io/generador-apa/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Generador APA 7 Automático | Citas gratis para TFG y TFM">
+    <meta property="og:description" content="Autocompleta referencias APA 7 usando DOI, ISBN, URL o texto bibliográfico. Guarda referencias y copia tu bibliografía completa.">
+    <meta property="og:url" content="https://calcumedia.github.io/generador-apa/">
+    <meta property="og:image" content="https://calcumedia.github.io/generador-apa/imagen_social.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Generador APA 7 Automático | Citas gratis para TFG y TFM">
+    <meta name="twitter:description" content="Autocompleta referencias APA 7 usando DOI, ISBN, URL o texto bibliográfico. Guarda referencias y copia tu bibliografía completa.">
+    <meta name="twitter:image" content="https://calcumedia.github.io/generador-apa/imagen_social.png">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Generador APA 7 Automático",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "url": "https://calcumedia.github.io/generador-apa/",
+        "inLanguage": "es",
+        "description": "Herramienta gratuita para generar citas y referencias bibliográficas en formato APA 7 a partir de DOI, ISBN, URL, texto bibliográfico o datos introducidos manualmente.",
+        "featureList": [
+            "Generador de citas APA 7",
+            "Generador de referencias bibliográficas APA 7",
+            "Generador de cita parentética APA 7",
+            "Generador de cita narrativa APA 7",
+            "Generador de cita textual con página",
+            "Constructor de bibliografía APA 7",
+            "Bibliografía guardada en navegador",
+            "Búsqueda automática por DOI",
+            "Búsqueda automática por ISBN",
+            "Generador de referencias para páginas web",
+            "Generador de referencias para libros",
+            "Generador de referencias para artículos académicos"
+        ],
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "inLanguage": "es",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Cómo funciona el Extractor Automático?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El extractor consulta bases de datos abiertas como Crossref, DataCite, Google Books y OpenLibrary para intentar localizar datos bibliográficos a partir de DOI, ISBN o texto académico. Después rellena el formulario para que el usuario revise los datos antes de generar la referencia."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué pasa si pego el enlace de una web?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Si se pega una URL, la herramienta detecta el dominio y rellena el enlace. Por limitaciones técnicas y de seguridad del navegador, muchas páginas no permiten extraer automáticamente autor y título, por lo que deben revisarse o completarse manualmente."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué ocurre si la fuente no tiene autor?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Si una fuente no tiene autor identificable, APA 7 establece que la referencia debe comenzar por el título. Si el campo de autor se deja vacío, la herramienta aplica esa lógica en la cita y en la referencia."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿La referencia generada es definitiva?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No necesariamente. La referencia se genera automáticamente y debe revisarse antes de entregarla, especialmente autores, año, título, tipo de documento, DOI, URL y formato final."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Puedo guardar varias referencias?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sí. La herramienta permite añadir referencias a una bibliografía temporal, ordenarlas alfabéticamente y copiar la bibliografía completa. La lista se guarda en el navegador del usuario."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué fuentes consulta el generador APA?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "La herramienta puede consultar Crossref y DataCite para DOI y artículos, y Google Books y OpenLibrary para ISBN y libros. También permite introducir los datos manualmente."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #4f46e5;
+            --primary-light: #6366f1;
+            --primary-dark: #4338ca;
+            --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #6366f1 55%, #7c3aed 100%);
+            --soft-gradient: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(99, 102, 241, 0.10) 55%, rgba(124, 58, 237, 0.08) 100%);
+            --bg-color: #f4f7f9;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --text-soft: #475569;
+            --border-color: #e2e8f0;
+            --success: #10b981;
+            --success-light: #ecfdf5;
+            --warning: #f59e0b;
+            --brand-100: #e0e7ff;
+            --brand-200: #c7d2fe;
+            --amazon: #ff9900;
+            --shadow-main: 0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 10px 15px -5px rgba(0, 0, 0, 0.02);
+            --shadow-card: 0 18px 40px -18px rgba(15, 23, 42, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            background-image:
+                radial-gradient(circle at top right, rgba(99, 102, 241, 0.08), transparent 400px),
+                radial-gradient(circle at top left, rgba(59, 130, 246, 0.05), transparent 320px);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 30px 20px 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .app-container,
+        .related-tool-card,
+        .resources-wrapper,
+        .seo-card,
+        .faq-wrapper {
+            width: 100%;
+            max-width: 750px;
+        }
+
+        .app-container {
+            background: var(--card-bg);
+            padding: 42px 35px;
+            border-radius: 28px;
+            box-shadow: var(--shadow-main);
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.85);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--soft-gradient);
+            color: var(--primary-dark);
+            border: 1px solid var(--brand-200);
+            padding: 9px 14px;
+            border-radius: 999px;
+            font-size: 0.86rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .header h1 {
+            margin: 0 0 12px;
+            font-size: 2.25rem;
+            color: var(--text-main);
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            line-height: 1.1;
+        }
+
+        .header p {
+            margin: 0 auto;
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 500;
+            max-width: 610px;
+        }
+
+        .magic-search-container {
+            background: linear-gradient(to bottom right, #ffffff, #f8fafc);
+            border: 2px solid #cbd5e1;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .magic-search-container.success {
+            border-color: var(--success);
+            background: var(--success-light);
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+        }
+
+        .magic-search-container.warning {
+            border-color: #fbbf24;
+            background: #fffbeb;
+            box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.1);
+        }
+
+        .magic-search-title {
+            font-weight: 800;
+            color: var(--primary);
+            margin: 0 0 8px;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .magic-instructions {
+            font-size: 0.92rem;
+            color: var(--text-soft);
+            margin: 0 0 18px;
+            line-height: 1.55;
+        }
+
+        .magic-instructions strong {
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .example-row {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 8px;
+            margin: 0 0 14px;
+        }
+
+        .example-btn {
+            border: 1px solid var(--brand-200);
+            background: #ffffff;
+            color: var(--primary-dark);
+            border-radius: 999px;
+            padding: 9px 10px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            cursor: pointer;
+            font-family: inherit;
+            transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+        }
+
+        .example-btn:hover {
+            background: #eef2ff;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 18px -16px rgba(79, 70, 229, 0.45);
+        }
+
+        .search-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .search-group textarea {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 14px;
+            font-size: 0.96rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            resize: vertical;
+            min-height: 92px;
+            font-family: inherit;
+            background: #fdfdfd;
+            transition: all 0.2s;
+        }
+
+        .search-group textarea:focus,
+        input:focus {
+            border-color: var(--primary-light);
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.14);
+        }
+
+        .field-warning {
+            border-color: #f59e0b !important;
+            background-color: #fffbeb !important;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18) !important;
+        }
+
+        .btn-search,
+        .btn-generate,
+        .related-tool-btn,
+        .btn-add-biblio,
+        .btn-copy-biblio,
+        .btn-clear-biblio {
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-family: inherit;
+        }
+
+        .btn-search {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 16px 25px;
+            border-radius: 14px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            box-shadow: 0 12px 24px -14px rgba(79, 70, 229, 0.55);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-search:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 30px -14px rgba(79, 70, 229, 0.65);
+        }
+
+        .btn-search:active {
+            transform: translateY(0);
+        }
+
+        .btn-search:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+            opacity: 0.8;
+        }
+
+        #search-status {
+            font-size: 0.9rem;
+            font-weight: 700;
+            min-height: 20px;
+            text-align: center;
+            margin-top: 12px;
+            padding: 10px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        #search-status.active {
+            display: block;
+        }
+
+        .status-loading {
+            color: var(--primary);
+            animation: pulse 1.5s infinite;
+        }
+
+        .status-success {
+            color: #065f46;
+            background: #d1fae5;
+            border: 1px solid #34d399;
+        }
+
+        .status-error {
+            color: #991b1b;
+            background: #fee2e2;
+            border: 1px solid #f87171;
+        }
+
+        .status-warning {
+            color: #92400e;
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .btn-toggle-manual,
+        .btn-close-manual {
+            width: 100%;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-toggle-manual {
+            background: #f1f5f9;
+            border: 1px dashed #cbd5e1;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 800;
+            padding: 16px;
+            border-radius: 14px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .btn-toggle-manual:hover {
+            background: #e2e8f0;
+            color: var(--text-main);
+            border-color: #94a3b8;
+        }
+
+        .btn-close-manual {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 15px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .btn-close-manual:hover {
+            color: #475569;
+            text-decoration: underline;
+        }
+
+        #contenedor-formularios {
+            width: 100%;
+            animation: slideDown 0.4s ease-out;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #origen-datos {
+            display: none;
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border: 1px solid #c7d2fe;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .tabs {
+            display: flex;
+            background: #f1f5f9;
+            padding: 6px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            background: transparent;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 800;
+            color: var(--text-muted);
+            transition: all 0.25s ease;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+
+        .tab-btn.active {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: 800;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        .hint {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-weight: 700;
+            margin-left: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: #f8fafc;
+            transition: all 0.2s;
+            color: var(--text-main);
+        }
+
+        .highlight-success {
+            border-color: var(--success) !important;
+            background-color: var(--success-light) !important;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+        }
+
+        .highlight-warning {
+            border-color: #fbbf24 !important;
+            background-color: #fffbeb !important;
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.15) !important;
+        }
+
+        .btn-generate {
+            width: 100%;
+            padding: 18px;
+            background: var(--text-main);
+            color: white;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-top: 15px;
+            box-shadow: 0 12px 24px -16px rgba(15, 23, 42, 0.55);
+            transition: all 0.2s;
+        }
+
+        .btn-generate:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+            box-shadow: 0 16px 30px -16px rgba(15, 23, 42, 0.65);
+        }
+
+        .btn-search:focus-visible,
+        .btn-generate:focus-visible,
+        .btn-copy:focus-visible,
+        .btn-toggle-manual:focus-visible,
+        .btn-close-manual:focus-visible,
+        .faq-question:focus-visible,
+        .tab-btn:focus-visible,
+        .related-tool-btn:focus-visible,
+        .amazon-card:focus-visible,
+        .resource-card-secondary:focus-visible,
+        .example-btn:focus-visible,
+        .btn-add-biblio:focus-visible,
+        .btn-copy-biblio:focus-visible,
+        .btn-clear-biblio:focus-visible,
+        .btn-delete-ref:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 3px;
+        }
+
+        .results-box {
+            margin-top: 35px;
+            padding: 25px;
+            border-radius: 18px;
+            background: var(--success-light);
+            border: 1px solid #a7f3d0;
+            width: 100%;
+        }
+
+        .confidence-box {
+            margin-bottom: 20px;
+            padding: 13px 15px;
+            background: #ffffff;
+            border: 1px solid #a7f3d0;
+            border-radius: 14px;
+            color: #065f46;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .confidence-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .confidence-alta {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .confidence-media {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .confidence-media-baja {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .confidence-baja,
+        .confidence-manual {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        .validation-warnings {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 14px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .validation-warnings h4 {
+            margin: 0 0 8px;
+            color: #b45309;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .validation-warnings ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #92400e;
+            font-size: 0.85rem;
+        }
+
+        .validation-warnings li {
+            margin-bottom: 4px;
+        }
+
+        .validation-warnings li.warning-important {
+            color: #78350f;
+            font-weight: 800;
+        }
+
+        .info-cita-textual {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 12px 15px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 25px;
+            font-size: 0.85rem;
+            color: #1e3a8a;
+        }
+
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            gap: 12px;
+        }
+
+        .result-title {
+            font-weight: 800;
+            color: #065f46;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-copy {
+            background: white;
+            border: 1px solid #10b981;
+            color: #059669;
+            padding: 8px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 800;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            font-family: inherit;
+        }
+
+        .btn-copy:hover {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-copy.copied {
+            background: #059669;
+            border-color: #059669;
+            color: white;
+        }
+
+        .cita-corta,
+        .sangria-francesa {
+            background: white;
+            border: 1px solid #a7f3d0;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        .cita-corta {
+            padding: 18px;
+        }
+
+        .sangria-francesa {
+            padding-left: 36px;
+            text-indent: -36px;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            padding-right: 18px;
+            line-height: 2;
+        }
+
+        .result-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .btn-add-biblio {
+            flex: 1;
+            min-width: 210px;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 14px 18px;
+            border-radius: 14px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            box-shadow: 0 12px 24px -16px rgba(79, 70, 229, 0.55);
+        }
+
+        .btn-add-biblio:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 16px 30px -16px rgba(79, 70, 229, 0.65);
+        }
+
+        .bibliography-box {
+            margin-top: 28px;
+            padding: 24px;
+            border-radius: 20px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 24px -20px rgba(15, 23, 42, 0.25);
+        }
+
+        .bibliography-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .bibliography-title {
+            margin: 0 0 4px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .bibliography-subtitle {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .bibliography-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 34px;
+            height: 34px;
+            padding: 0 10px;
+            background: #eef2ff;
+            color: var(--primary-dark);
+            border: 1px solid var(--brand-200);
+            border-radius: 999px;
+            font-weight: 800;
+            font-size: 0.88rem;
+        }
+
+        .bibliography-empty {
+            background: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            color: var(--text-muted);
+            border-radius: 14px;
+            padding: 16px;
+            font-size: 0.92rem;
+            margin: 0;
+        }
+
+        .bibliography-list {
+            display: grid;
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .bibliography-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 16px;
+        }
+
+        .bibliography-item-ref {
+            margin: 0 0 12px;
+            padding-left: 32px;
+            text-indent: -32px;
+            line-height: 1.75;
+            color: var(--text-main);
+            font-size: 0.94rem;
+        }
+
+        .bibliography-item-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .bibliography-item-type {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .btn-delete-ref {
+            border: 1px solid #fecdd3;
+            background: #fff1f2;
+            color: #be123c;
+            border-radius: 999px;
+            padding: 7px 11px;
+            font-family: inherit;
+            font-size: 0.78rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .bibliography-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .btn-copy-biblio,
+        .btn-clear-biblio {
+            flex: 1;
+            min-width: 190px;
+            padding: 13px 16px;
+            border-radius: 14px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            font-family: inherit;
+        }
+
+        .btn-copy-biblio {
+            background: var(--text-main);
+            color: white;
+        }
+
+        .btn-copy-biblio:hover {
+            background: #1e293b;
+        }
+
+        .btn-clear-biblio {
+            background: #fff1f2;
+            color: #be123c;
+            border: 1px solid #fecdd3;
+        }
+
+        .btn-clear-biblio:hover {
+            background: #ffe4e6;
+        }
+
+        .related-tool-card,
+        .seo-card {
+            margin: 4px auto 35px;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.9)),
+                var(--soft-gradient);
+            border: 1px solid var(--brand-200);
+            border-radius: 24px;
+            padding: 26px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .related-tool-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin-bottom: 12px;
+        }
+
+        .related-tool-card h3,
+        .seo-card h2 {
+            margin: 0 0 10px;
+            font-size: 1.32rem;
+            line-height: 1.3;
+            color: var(--text-main);
+            font-weight: 800;
+        }
+
+        .related-tool-card p,
+        .seo-card p {
+            margin: 0 0 16px;
+            color: var(--text-soft);
+            font-size: 0.96rem;
+            line-height: 1.6;
+        }
+
+        .seo-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .related-tool-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--primary-gradient);
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 14px 18px;
+            border-radius: 14px;
+            box-shadow: 0 12px 24px -16px rgba(79, 70, 229, 0.55);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .related-tool-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 30px -16px rgba(79, 70, 229, 0.65);
+        }
+
+        .resources-wrapper {
+            margin-bottom: 35px;
+        }
+
+        .resources-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            margin: 0 0 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: left;
+        }
+
+        .resource-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .amazon-card,
+        .resource-card-secondary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+        }
+
+        .amazon-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid var(--amazon);
+            border-radius: 16px;
+            padding: 17px 20px;
+            box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.08);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .amazon-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 18px -10px rgba(0, 0, 0, 0.16);
+        }
+
+        .amazon-text {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .amazon-title {
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--text-main);
+            margin: 0 0 2px;
+        }
+
+        .amazon-subtitle {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .affiliate-note {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin: 6px 0 0;
+        }
+
+        .amazon-btn {
+            background-color: #ffd814;
+            border: 1px solid #fcd200;
+            border-radius: 999px;
+            color: #0f172a;
+            padding: 7px 18px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .resource-card-secondary {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 14px 20px;
+        }
+
+        .resource-card-secondary:hover {
+            background: #f1f5f9;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 18px -14px rgba(15, 23, 42, 0.2);
+        }
+
+        .resource-title-sec {
+            font-weight: 800;
+            font-size: 0.95rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .resource-icon {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .faq-wrapper {
+            margin-bottom: 40px;
+        }
+
+        .faq-main-title {
+            text-align: center;
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin: 0 0 30px;
+            letter-spacing: -0.5px;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px -8px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 22px 25px;
+            align-items: center;
+            background: none;
+            border: none;
+            font-size: 1.05rem;
+            font-weight: 800;
+            cursor: pointer;
+            text-align: left;
+            color: var(--text-main);
+            transition: color 0.2s;
+            font-family: inherit;
+            gap: 16px;
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer p {
+            padding: 0 25px 25px;
+            margin: 0;
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        .footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-top: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 18px 14px 40px;
+            }
+
+            .app-container {
+                padding: 30px 20px;
+                border-radius: 24px;
+            }
+
+            .header h1 {
+                font-size: 1.78rem;
+            }
+
+            .magic-search-container {
+                padding: 20px;
+            }
+
+            .example-row {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .result-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .bibliography-header {
+                flex-direction: column;
+            }
+
+            .related-tool-card,
+            .seo-card {
+                padding: 22px 18px;
+                border-radius: 22px;
+            }
+
+            .related-tool-btn,
+            .amazon-btn {
+                width: 100%;
+            }
+
+            .amazon-card,
+            .resource-card-secondary {
+                align-items: flex-start;
+            }
+
+            .resource-card-secondary {
+                gap: 12px;
+            }
+
+            .faq-question {
+                padding: 20px;
+                font-size: 1rem;
+            }
+
+            .faq-answer p {
+                padding: 0 20px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="app-container">
+        <header class="header">
+            <div class="header-kicker">
+                <span>📚</span>
+                <span>CalcuMedia Uni</span>
+            </div>
+
+            <h1>Generador APA 7 Automático ⚡</h1>
+
+            <p>
+                Autocompleta tus referencias, genera cita parentética, narrativa y textual, y guarda tu bibliografía APA 7 para TFG, TFM o trabajos universitarios.
+            </p>
+        </header>
+
+        <section class="magic-search-container" id="magic-container" aria-labelledby="extractor-title">
+            <p class="magic-search-title" id="extractor-title">✨ Extractor de Datos Bibliográficos</p>
+
+            <p class="magic-instructions">
+                Pega un <strong>DOI</strong>, un <strong>ISBN</strong>, una <strong>URL</strong> o texto de referencias académicas. Intentaremos rellenar los datos por ti usando bases abiertas como Crossref, DataCite, Google Books y OpenLibrary.
+            </p>
+
+            <div class="example-row" aria-label="Ejemplos rápidos">
+                <button class="example-btn" type="button" onclick="usarEjemplo('doi')">Probar DOI</button>
+                <button class="example-btn" type="button" onclick="usarEjemplo('isbn')">Probar ISBN</button>
+                <button class="example-btn" type="button" onclick="usarEjemplo('url')">Probar URL</button>
+                <button class="example-btn" type="button" onclick="usarEjemplo('texto')">Probar referencia</button>
+            </div>
+
+            <div class="search-group">
+                <label for="magic-input" class="sr-only">Introduce DOI, ISBN, URL o referencia bibliográfica</label>
+                <textarea id="magic-input" placeholder="Ej: Pega aquí tu DOI (10.xxx), ISBN, texto académico o URL..."></textarea>
+
+                <button id="btn-search-main" class="btn-search" type="button" onclick="buscarDatosMagicos()">
+                    Buscar coincidencias y autocompletar
+                </button>
+
+                <button class="btn-close-manual" type="button" onclick="limpiarTodo()">
+                    Limpiar todo
+                </button>
+            </div>
+
+            <div id="search-status" role="status" aria-live="polite"></div>
+        </section>
+
+        <button class="btn-toggle-manual" id="btn-toggle-manual" type="button" aria-expanded="false" aria-controls="contenedor-formularios" onclick="marcarModoManual(); registrarEvento('usar_formulario_manual', { tipo_documento: activeTab }); mostrarFormularios()">
+            ✍️ Prefiero introducir o revisar los datos manualmente
+        </button>
+
+        <section id="contenedor-formularios" hidden aria-label="Formulario manual para generar referencias APA">
+            <div id="origen-datos" role="status" aria-live="polite"></div>
+
+            <div class="tabs" role="tablist" aria-label="Tipo de documento">
+                <button class="tab-btn active" role="tab" type="button" aria-selected="true" aria-controls="form-web" tabindex="0" id="tab-web" data-tab="web" onclick="changeTab('web')">
+                    🌐 Página Web
+                </button>
+
+                <button class="tab-btn" role="tab" type="button" aria-selected="false" aria-controls="form-libro" tabindex="-1" id="tab-libro" data-tab="libro" onclick="changeTab('libro')">
+                    📚 Libro
+                </button>
+
+                <button class="tab-btn" role="tab" type="button" aria-selected="false" aria-controls="form-paper" tabindex="-1" id="tab-paper" data-tab="paper" onclick="changeTab('paper')">
+                    📄 Artículo
+                </button>
+            </div>
+
+            <div id="form-web" class="form-section active" role="tabpanel" aria-labelledby="tab-web">
+                <div class="form-group">
+                    <label for="w-autor">Autores o entidad <span class="hint">(Persona: Pérez, J.; entidad: OMS)</span></label>
+                    <input type="text" id="w-autor" placeholder="Ej: Pérez, J.; García, M. / Organización Mundial de la Salud">
+                </div>
+
+                <div class="form-group">
+                    <label for="w-ano">Año</label>
+                    <input type="text" id="w-ano" placeholder="Ej: 2024">
+                </div>
+
+                <div class="form-group">
+                    <label for="w-titulo">Título de la página</label>
+                    <input type="text" id="w-titulo" placeholder="El impacto de la inteligencia artificial">
+                </div>
+
+                <div class="form-group">
+                    <label for="w-sitio">Sitio web</label>
+                    <input type="text" id="w-sitio" placeholder="Organización Mundial de la Salud">
+                </div>
+
+                <div class="form-group">
+                    <label for="w-url">URL</label>
+                    <input type="url" id="w-url" placeholder="https://...">
+                </div>
+            </div>
+
+            <div id="form-libro" class="form-section" role="tabpanel" aria-labelledby="tab-libro" hidden>
+                <div class="form-group">
+                    <label for="l-autor">Autores <span class="hint">(Formato recomendado: Apellido, Inicial.; Apellido, Inicial.)</span></label>
+                    <input type="text" id="l-autor" placeholder="Ej: Hawking, S.; Pérez, J.">
+                </div>
+
+                <div class="form-group">
+                    <label for="l-ano">Año</label>
+                    <input type="text" id="l-ano" placeholder="Ej: 2020">
+                </div>
+
+                <div class="form-group">
+                    <label for="l-titulo">Título del libro</label>
+                    <input type="text" id="l-titulo" placeholder="Breve historia del tiempo">
+                </div>
+
+                <div class="form-group">
+                    <label for="l-editorial">Editorial <span class="hint">(Sin ciudad)</span></label>
+                    <input type="text" id="l-editorial" placeholder="Crítica">
+                </div>
+            </div>
+
+            <div id="form-paper" class="form-section" role="tabpanel" aria-labelledby="tab-paper" hidden>
+                <div class="form-group">
+                    <label for="p-autor">Autores <span class="hint">(Formato recomendado: Apellido, Inicial.; Apellido, Inicial.)</span></label>
+                    <input type="text" id="p-autor" placeholder="Ej: Turing, A. M.; Pérez, J.">
+                </div>
+
+                <div class="form-group">
+                    <label for="p-ano">Año</label>
+                    <input type="text" id="p-ano" placeholder="Ej: 1950">
+                </div>
+
+                <div class="form-group">
+                    <label for="p-titulo">Título del artículo</label>
+                    <input type="text" id="p-titulo" placeholder="Computing Machinery and Intelligence">
+                </div>
+
+                <div class="form-group">
+                    <label for="p-revista" id="label-revista-repositorio">Nombre de la revista</label>
+                    <input type="text" id="p-revista" placeholder="Mind">
+                </div>
+
+                <div style="display: flex; gap: 15px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="p-vol">Volumen</label>
+                        <input type="text" id="p-vol" placeholder="59">
+                    </div>
+
+                    <div class="form-group" style="flex: 1;">
+                        <label for="p-num">Número</label>
+                        <input type="text" id="p-num" placeholder="236">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="p-pag">Páginas</label>
+                    <input type="text" id="p-pag" placeholder="433-460">
+                </div>
+
+                <div class="form-group">
+                    <label for="p-doi">DOI <span class="hint">(Opcional, pero recomendable si existe)</span></label>
+                    <input type="text" id="p-doi" placeholder="10.1093/mind/LIX.236.433">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="pagina-textual">Página para cita textual <span class="hint">(Opcional: 15 o 15-17)</span></label>
+                <input type="text" id="pagina-textual" placeholder="Ej: 15 / 15-17">
+            </div>
+
+            <button class="btn-generate" type="button" onclick="generarCita()">
+                Generar cita APA 7 🚀
+            </button>
+
+            <button class="btn-close-manual" type="button" onclick="ocultarFormularios()">
+                Cerrar formulario manual ⬆️
+            </button>
+        </section>
+
+        <section id="resultados" class="results-box" hidden aria-label="Resultado de la cita APA generada">
+            <div id="resultado-anuncio" role="status" aria-live="polite" class="sr-only"></div>
+
+            <div id="confidence-box" class="confidence-box">
+                <div id="confidence-pill" class="confidence-pill confidence-manual">🧭 Confianza manual</div>
+                <div id="confidence-detail">Referencia generada con datos introducidos o revisados manualmente.</div>
+            </div>
+
+            <div id="validation-warnings" class="validation-warnings">
+                <h4>⚠️ Avisos de revisión</h4>
+                <ul id="warning-list"></ul>
+            </div>
+
+            <div class="info-cita-textual" style="margin-bottom: 20px;">
+                ℹ️ <strong>Importante:</strong> Esta referencia ha sido generada automáticamente. Verifica siempre autores, año, título, tipo de documento y formato final antes de entregarla.
+            </div>
+
+            <div class="result-header">
+                <div class="result-title">1. Cita parentética</div>
+                <button class="btn-copy" type="button" aria-label="Copiar cita parentética" onclick="copiarTexto('res-parentetica', this, 'cita_parentetica')">
+                    📋 Copiar
+                </button>
+            </div>
+            <div class="cita-corta" id="res-parentetica"></div>
+
+            <div class="result-header">
+                <div class="result-title">2. Cita narrativa</div>
+                <button class="btn-copy" type="button" aria-label="Copiar cita narrativa" onclick="copiarTexto('res-narrativa', this, 'cita_narrativa')">
+                    📋 Copiar
+                </button>
+            </div>
+            <div class="cita-corta" id="res-narrativa"></div>
+
+            <div class="result-header">
+                <div class="result-title">3. Cita textual</div>
+                <button class="btn-copy" type="button" aria-label="Copiar cita textual" onclick="copiarTexto('res-textual', this, 'cita_textual')">
+                    📋 Copiar
+                </button>
+            </div>
+            <div class="cita-corta" id="res-textual"></div>
+
+            <div class="info-cita-textual">
+                ℹ️ <strong>Recuerda:</strong> si copias una frase palabra por palabra, APA exige incluir página o localizador. Ej: <em>(Pérez, 2024, p. 15)</em>.
+            </div>
+
+            <div class="result-header">
+                <div class="result-title">4. Referencia bibliográfica</div>
+                <button class="btn-copy" type="button" aria-label="Copiar referencia bibliográfica" onclick="copiarTexto('res-larga', this, 'referencia_bibliografica')">
+                    📋 Copiar referencia
+                </button>
+            </div>
+
+            <div class="sangria-francesa" id="res-larga"></div>
+
+            <div class="result-actions">
+                <button class="btn-add-biblio" type="button" onclick="anadirReferenciaBibliografia()">
+                    ➕ Añadir a mi bibliografía APA 7
+                </button>
+            </div>
+        </section>
+
+        <section id="bibliography-box" class="bibliography-box" aria-label="Mi bibliografía APA 7">
+            <div class="bibliography-header">
+                <div>
+                    <h2 class="bibliography-title">Mi bibliografía APA 7</h2>
+                    <p class="bibliography-subtitle">Guarda referencias, ordénalas alfabéticamente y copia tu bibliografía completa.</p>
+                </div>
+                <span id="bibliography-count" class="bibliography-count">0</span>
+            </div>
+
+            <p id="bibliography-empty" class="bibliography-empty">
+                Aún no has añadido referencias. Genera una cita y pulsa “Añadir a mi bibliografía APA 7”.
+            </p>
+
+            <div id="bibliography-list" class="bibliography-list"></div>
+
+            <div class="bibliography-actions">
+                <button class="btn-copy-biblio" type="button" onclick="copiarBibliografiaCompleta()">
+                    📋 Copiar bibliografía completa
+                </button>
+                <button class="btn-clear-biblio" type="button" onclick="borrarBibliografiaCompleta()">
+                    🗑️ Borrar bibliografía
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <section id="calculator-block" class="related-tool-card" aria-label="Herramienta complementaria">
+        <div class="related-tool-kicker">
+            <span>🎓</span>
+            <span>Herramienta complementaria</span>
+        </div>
+
+        <h3>¿También necesitas calcular tu nota media universitaria?</h3>
+
+        <p>
+            Si estás preparando becas, Erasmus, máster o revisando tu expediente, prueba también nuestra calculadora gratuita de nota media ponderada, equivalencia ECTS y créditos universitarios.
+        </p>
+
+        <a href="https://calcumedia.github.io/calculadora-notas/" class="related-tool-btn" onclick="registrarEvento('clic_herramienta_interna', { destino: 'calculadora_notas', ubicacion: 'bloque_complementario' })">
+            <span>📊</span>
+            <span>Abrir calculadora de nota media</span>
+        </a>
+    </section>
+
+    <section id="resources-block" class="resources-wrapper" aria-label="Recursos recomendados para TFG y TFM">
+        <h3 class="resources-title">🎓 Recursos recomendados para TFG/TFM</h3>
+
+        <div class="resource-grid">
+            <a id="amazon-resource-card" href="https://www.amazon.es/joinstudent?tag=calcumedia-21" target="_blank" rel="noopener noreferrer sponsored" class="amazon-card" onclick="registrarEvento('clic_amazon', { ubicacion: 'recursos_apa', destino: 'prime_student' })">
+                <div class="amazon-text">
+                    <p class="amazon-title">¿En plena entrega de TFG, TFM o trabajos?</p>
+                    <p class="amazon-subtitle">Prime Student puede ayudarte con libros, material de estudio, envíos rápidos y Prime Video para desconectar.</p>
+                    <p class="affiliate-note">Enlace de afiliado: podemos recibir una comisión si te registras desde este enlace, sin coste adicional para ti.</p>
+                </div>
+
+                <div class="amazon-btn">Ver ventaja para estudiantes</div>
+            </a>
+
+            <a href="https://apastyle.apa.org/style-grammar-guidelines/references/examples" target="_blank" rel="noopener noreferrer" class="resource-card-secondary" onclick="registrarEvento('clic_recurso_externo', { destino: 'guia_oficial_apa' })">
+                <p class="resource-title-sec"><span class="resource-icon">📘</span> Guía oficial de Normas APA</p>
+                <span class="resource-icon">→</span>
+            </a>
+
+            <a href="https://www.scribbr.es/detector-de-plagio/" target="_blank" rel="noopener noreferrer" class="resource-card-secondary" onclick="registrarEvento('clic_recurso_externo', { destino: 'scribbr_plagio' })">
+                <p class="resource-title-sec"><span class="resource-icon">✅</span> Verificador de plagio de Scribbr</p>
+                <span class="resource-icon">→</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="seo-block" class="seo-card" aria-label="Cómo citar en APA 7 correctamente">
+        <h2>Cómo generar referencias APA 7 correctamente</h2>
+
+        <p>
+            Las normas APA 7 se utilizan habitualmente en trabajos universitarios, TFG, TFM, artículos académicos y documentos de investigación. Para citar correctamente, es importante diferenciar entre la cita dentro del texto y la referencia bibliográfica completa que aparece al final del trabajo.
+        </p>
+
+        <p>
+            Este generador APA 7 te ayuda a crear citas parentéticas, narrativas, textuales y referencias de páginas web, libros y artículos académicos a partir de DOI, ISBN, URL, texto bibliográfico o datos introducidos manualmente. Aun así, conviene revisar siempre autores, año, título, revista, editorial, DOI y enlace antes de entregar el documento.
+        </p>
+
+        <p>
+            Si estás preparando un TFG, TFM o trabajo académico, esta herramienta puede ahorrarte tiempo al construir referencias bibliográficas en formato APA 7, especialmente cuando trabajas con fuentes académicas localizadas en Crossref, DataCite, Google Books u OpenLibrary.
+        </p>
+    </section>
+
+    <section id="faq-block" class="faq-wrapper" aria-label="Preguntas frecuentes">
+        <h2 class="faq-main-title">Preguntas frecuentes</h2>
+
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-btn-1">
+                <span>¿Cómo funciona el Extractor Automático?</span>
+                <span class="faq-icon">▼</span>
+            </button>
+
+            <div id="faq-1" class="faq-answer" role="region" aria-labelledby="faq-btn-1">
+                <p>
+                    Nuestra herramienta se conecta directamente a bases de datos académicas abiertas como Crossref, DataCite, Google Books y OpenLibrary. Cuando pegas un DOI, un ISBN o texto académico limpio, consultamos esas bases de datos para encontrar coincidencias y rellenar los campos de autor, año y título por ti. Es un sistema asistido: tú siempre debes revisar los datos en el formulario antes de generar la cita final para evitar errores.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-btn-2">
+                <span>¿Qué pasa si pego el enlace de una web?</span>
+                <span class="faq-icon">▼</span>
+            </button>
+
+            <div id="faq-2" class="faq-answer" role="region" aria-labelledby="faq-btn-2">
+                <p>
+                    Si pegas una URL, nuestro sistema detectará el dominio y rellenará el enlace automáticamente. Sin embargo, por seguridad del navegador, no podemos extraer directamente el autor y el título de muchas páginas web. Tendrás que revisarlos o completarlos manualmente.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-btn-3">
+                <span>¿Qué ocurre si la fuente no tiene autor?</span>
+                <span class="faq-icon">▼</span>
+            </button>
+
+            <div id="faq-3" class="faq-answer" role="region" aria-labelledby="faq-btn-3">
+                <p>
+                    Si una fuente no tiene autor identificable, APA 7 establece que la referencia debe comenzar por el título. Si dejas el campo de autores vacío, la herramienta aplicará esa lógica automáticamente en la cita y en la referencia.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-btn-4">
+                <span>¿La referencia generada es definitiva?</span>
+                <span class="faq-icon">▼</span>
+            </button>
+
+            <div id="faq-4" class="faq-answer" role="region" aria-labelledby="faq-btn-4">
+                <p>
+                    No necesariamente. La referencia generada debe revisarse siempre antes de entregarla, especialmente si viene de un autocompletado automático. Comprueba autores, año, título, DOI, URL, revista, editorial y tipo de documento.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-btn-5">
+                <span>¿Puedo guardar varias referencias?</span>
+                <span class="faq-icon">▼</span>
+            </button>
+
+            <div id="faq-5" class="faq-answer" role="region" aria-labelledby="faq-btn-5">
+                <p>
+                    Sí. Puedes añadir referencias a “Mi bibliografía APA 7”, copiarlas todas ordenadas alfabéticamente y mantenerlas guardadas en tu navegador aunque recargues la página.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-6" id="faq-btn-6">
+                <span>¿Qué fuentes consulta el generador APA?</span>
+                <span class="faq-icon">▼</span>
+            </button>
+
+            <div id="faq-6" class="faq-answer" role="region" aria-labelledby="faq-btn-6">
+                <p>
+                    Para DOI y artículos puede consultar Crossref y DataCite. Para ISBN y libros puede consultar Google Books y OpenLibrary. Si no encuentra una coincidencia fiable, puedes introducir los datos manualmente.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        © 2026 CalcuMedia Uni. Herramienta gratuita para estudiantes.
+    </footer>
+
+    <script>
+        let activeTab = 'web';
+        let usoGeneradorIniciadoRegistrado = false;
+        let referenciasGuardadas = [];
+        let referenciaActual = null;
+        let confianzaActual = 'manual';
+        let detalleConfianzaActual = 'Referencia generada con datos introducidos o revisados manualmente.';
+
+        const STORAGE_KEY = 'calcumedia_referencias_apa_v2';
+
+        const PARTICULAS_APELLIDO = [
+            'de', 'del', 'la', 'las', 'los', 'y', 'van', 'von', 'der', 'da', 'di', 'do'
+        ];
+
+        function registrarEvento(nombreEvento, parametros = {}) {
+            if (typeof gtag === 'function') {
+                gtag('event', nombreEvento, {
+                    transport_type: 'beacon',
+                    herramienta: 'generador_apa',
+                    ...parametros
+                });
+            }
+        }
+
+        function limpiarISBN(valor) {
+            return String(valor || '')
+                .replace(/isbn(?:-1[03])?:?/ig, '')
+                .replace(/[^0-9Xx]/g, '')
+                .toUpperCase();
+        }
+
+        function pareceUrl(valor) {
+            const texto = String(valor || '').trim();
+
+            return (
+                (texto.startsWith('http') || texto.startsWith('www.')) ||
+                /^[a-z0-9.-]+\.[a-z]{2,}(\/.*)?$/i.test(texto)
+            ) && !texto.includes(" ");
+        }
+
+        function prepararUrlEntrada(valor) {
+            const texto = String(valor || '').trim();
+
+            if (texto.startsWith('http')) return texto;
+            if (texto.startsWith('www.')) return 'https://' + texto;
+
+            return 'https://' + texto;
+        }
+
+        function registrarUsoGeneradorIniciado() {
+            if (!usoGeneradorIniciadoRegistrado) {
+                usoGeneradorIniciadoRegistrado = true;
+                registrarEvento('uso_generador_iniciado');
+            }
+        }
+
+        function marcarModoManual() {
+            confianzaActual = 'manual';
+            detalleConfianzaActual = 'Referencia generada con datos introducidos o revisados manualmente.';
+        }
+
+        function detectarTipoEntrada(valor) {
+            if (!valor) return 'vacio';
+
+            const texto = valor.trim();
+            const isbnLimpio = limpiarISBN(texto);
+
+            if (texto.match(/(10\.\d{4,9}\/[-._;()/:A-Z0-9]+)/i)) return 'doi';
+            if (pareceUrl(texto)) return 'url';
+            if (isbnLimpio.match(/^(978|979)?\d{9}[\dX]$/i)) return 'isbn';
+
+            return 'texto_bibliografico';
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const magicInput = document.getElementById('magic-input');
+
+            magicInput.addEventListener('keydown', function (e) {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                    e.preventDefault();
+                    buscarDatosMagicos();
+                }
+            });
+
+            magicInput.addEventListener('input', registrarUsoGeneradorIniciado);
+
+            document.querySelectorAll('#contenedor-formularios input').forEach(input => {
+                input.addEventListener('input', function () {
+                    registrarUsoGeneradorIniciado();
+
+                    if (this.id !== 'pagina-textual') {
+                        marcarModoManual();
+                    }
+                });
+            });
+
+            const faqButtons = document.querySelectorAll('.faq-question');
+
+            faqButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const faqItem = this.parentElement;
+                    const faqAnswer = this.nextElementSibling;
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    const pregunta = this.innerText.replace('▼', '').trim();
+
+                    this.setAttribute('aria-expanded', String(!isExpanded));
+                    faqItem.classList.toggle('open');
+
+                    if (faqItem.classList.contains('open')) {
+                        faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
+                        registrarEvento('clic_faq_apa', { pregunta: pregunta });
+                    } else {
+                        faqAnswer.style.maxHeight = "0px";
+                    }
+                });
+            });
+
+            const tabs = document.querySelectorAll('.tab-btn');
+
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('keydown', (e) => {
+                    let newIndex = index;
+
+                    if (e.key === 'ArrowRight') newIndex = (index + 1) % tabs.length;
+                    else if (e.key === 'ArrowLeft') newIndex = (index - 1 + tabs.length) % tabs.length;
+                    else if (e.key === 'Home') newIndex = 0;
+                    else if (e.key === 'End') newIndex = tabs.length - 1;
+
+                    if (newIndex !== index) {
+                        e.preventDefault();
+                        tabs[newIndex].click();
+                        tabs[newIndex].focus();
+                    }
+                });
+            });
+
+            cargarBibliografiaGuardada();
+            renderizarBibliografia();
+
+            observarBloque('bibliography-box', 'ver_bloque_bibliografia');
+            observarBloque('calculator-block', 'ver_bloque_calculadora_notas');
+            observarBloque('resources-block', 'ver_bloque_recursos_apa');
+            observarBloque('amazon-resource-card', 'ver_bloque_amazon_apa');
+            observarBloque('seo-block', 'ver_bloque_seo_apa');
+            observarBloque('faq-block', 'ver_bloque_faq_apa');
+        });
+
+        function usarEjemplo(tipo) {
+            const ejemplos = {
+                doi: '10.1037/0003-066X.59.1.29',
+                isbn: '9788437604947',
+                url: 'https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response',
+                texto: 'Bandura, A. (1977). Self-efficacy: Toward a unifying theory of behavioral change. Psychological Review, 84(2), 191-215. https://doi.org/10.1037/0033-295X.84.2.191'
+            };
+
+            document.getElementById('magic-input').value = ejemplos[tipo] || '';
+            document.getElementById('magic-input').focus();
+
+            registrarUsoGeneradorIniciado();
+            registrarEvento('clic_ejemplo_apa', {
+                tipo_ejemplo: tipo
+            });
+        }
+
+        async function fetchConTimeout(resource, options = {}, timeout = 10000) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), timeout);
+
+            try {
+                return await fetch(resource, {
+                    ...options,
+                    signal: controller.signal
+                });
+            } catch (error) {
+                if (error.name === 'AbortError') throw new Error('Timeout');
+                throw error;
+            } finally {
+                clearTimeout(id);
+            }
+        }
+
+        function limpiarCampos(tabName) {
+            document.querySelectorAll(`#form-${tabName} input`).forEach(input => {
+                input.value = '';
+                input.classList.remove('highlight-success', 'highlight-warning', 'field-warning');
+                if (input.highlightTimeout) clearTimeout(input.highlightTimeout);
+            });
+        }
+
+        function limpiarDOI(doi) {
+            if (!doi) return "";
+
+            let limpio = doi.trim();
+            limpio = limpio.replace(/^https?:\/\/(dx\.)?doi\.org\//i, '');
+            limpio = limpio.replace(/^doi:\s*/i, '');
+            limpio = limpio.replace(/\s+/g, '');
+            limpio = limpio.replace(/[.,;:\)\]]+$/, '');
+
+            return limpio;
+        }
+
+        function limpiarUrlParaCita(url) {
+            try {
+                const valor = String(url || '').trim();
+                const candidato = valor.startsWith('www.') ? 'https://' + valor : valor;
+                const urlObj = new URL(candidato);
+
+                const paramsABorrar = [
+                    'utm_source',
+                    'utm_medium',
+                    'utm_campaign',
+                    'utm_term',
+                    'utm_content',
+                    'fbclid',
+                    'gclid',
+                    'igshid',
+                    'mc_cid',
+                    'mc_eid'
+                ];
+
+                paramsABorrar.forEach(param => urlObj.searchParams.delete(param));
+
+                return urlObj.toString();
+            } catch {
+                return url;
+            }
+        }
+
+        function mostrarFormularios(enfocar = true) {
+            const contenedor = document.getElementById('contenedor-formularios');
+            const btnManual = document.getElementById('btn-toggle-manual');
+
+            contenedor.hidden = false;
+            btnManual.style.display = 'none';
+            btnManual.setAttribute('aria-expanded', 'true');
+
+            if (enfocar) {
+                const panelActivo = contenedor.querySelector('.form-section.active');
+                if (!panelActivo) return;
+
+                const inputs = [...panelActivo.querySelectorAll('input')];
+                const primerVacio = inputs.find(input => !input.value.trim());
+                const objetivo = primerVacio || inputs[0];
+
+                if (objetivo) objetivo.focus();
+            }
+        }
+
+        function ocultarFormularios() {
+            const contenedor = document.getElementById('contenedor-formularios');
+            const btnManual = document.getElementById('btn-toggle-manual');
+            const statusBox = document.getElementById('search-status');
+            const magicContainer = document.getElementById('magic-container');
+
+            contenedor.hidden = true;
+            btnManual.style.display = 'block';
+            btnManual.setAttribute('aria-expanded', 'false');
+            btnManual.focus();
+
+            document.getElementById('resultados').hidden = true;
+            document.getElementById('origen-datos').style.display = 'none';
+
+            statusBox.style.display = 'none';
+            statusBox.className = '';
+            statusBox.innerText = '';
+
+            magicContainer.classList.remove('success', 'warning');
+
+            document.getElementById('label-revista-repositorio').innerText = "Nombre de la revista";
+            document.getElementById('validation-warnings').style.display = 'none';
+            document.getElementById('warning-list').innerHTML = '';
+
+            limpiarResultados();
+            limpiarErroresCampos();
+            marcarModoManual();
+        }
+
+        function limpiarTodo() {
+            registrarEvento('limpiar_todo', {
+                tipo_documento: activeTab
+            });
+
+            document.getElementById('magic-input').value = '';
+            document.getElementById('resultados').hidden = true;
+            document.getElementById('origen-datos').style.display = 'none';
+            document.getElementById('pagina-textual').value = '';
+
+            const statusBox = document.getElementById('search-status');
+            const magicContainer = document.getElementById('magic-container');
+
+            statusBox.style.display = 'none';
+            statusBox.className = '';
+            statusBox.innerText = '';
+
+            magicContainer.classList.remove('success', 'warning');
+
+            ['web', 'libro', 'paper'].forEach(limpiarCampos);
+
+            document.getElementById('validation-warnings').style.display = 'none';
+            document.getElementById('warning-list').innerHTML = '';
+
+            limpiarResultados();
+            activeTab = 'web';
+            changeTab('web', true);
+            ocultarFormularios();
+        }
+
+        function limpiarResultados() {
+            ['res-parentetica', 'res-narrativa', 'res-textual', 'res-larga'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = '';
+            });
+
+            document.getElementById('resultado-anuncio').textContent = '';
+            referenciaActual = null;
+        }
+
+        function changeTab(tabName, origenAutomatico = false) {
+            activeTab = tabName;
+
+            document.querySelectorAll('.form-section').forEach(el => {
+                el.classList.remove('active');
+                el.setAttribute('hidden', 'true');
+            });
+
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active');
+                el.setAttribute('aria-selected', 'false');
+                el.setAttribute('tabindex', '-1');
+            });
+
+            const activePanel = document.getElementById('form-' + tabName);
+            activePanel.classList.add('active');
+            activePanel.removeAttribute('hidden');
+
+            const btnActivo = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+
+            if (btnActivo) {
+                btnActivo.classList.add('active');
+                btnActivo.setAttribute('aria-selected', 'true');
+                btnActivo.setAttribute('tabindex', '0');
+            }
+
+            document.getElementById('resultados').hidden = true;
+            quitarHighlights();
+            limpiarErroresCampos();
+            limpiarResultados();
+
+            if (!origenAutomatico) {
+                document.getElementById('origen-datos').style.display = 'none';
+                document.getElementById('search-status').style.display = 'none';
+                document.getElementById('magic-container').classList.remove('success', 'warning');
+                document.getElementById('label-revista-repositorio').innerText = "Nombre de la revista";
+
+                marcarModoManual();
+
+                registrarEvento('cambiar_tipo_documento', {
+                    tipo_documento: tabName
+                });
+
+                const primerInput = activePanel.querySelector('input');
+                if (primerInput) primerInput.focus();
+            }
+        }
+
+        function limpiarHTML(str) {
+            if (!str) return "";
+
+            return str.replace(/[&<>'"]/g, tag => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[tag]));
+        }
+
+        function obtenerValorCampo(id) {
+            return document.getElementById(id).value.trim();
+        }
+
+        function limpiarTextoSeguro(valor) {
+            return limpiarHTML(String(valor || '').trim());
+        }
+
+        function limpiarErroresCampos() {
+            document.querySelectorAll('.field-warning').forEach(input => {
+                input.classList.remove('field-warning');
+            });
+        }
+
+        function marcarCampo(id) {
+            const campo = document.getElementById(id);
+            if (campo) campo.classList.add('field-warning');
+        }
+
+        function normalizarTexto(texto) {
+            if (!texto) return "";
+
+            return texto.toLowerCase()
+                .replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, "")
+                .replace(/\s{2,}/g, " ")
+                .trim();
+        }
+
+        function capitalizarNombres(str) {
+            if (!str) return "";
+
+            const isAllUpper = str === str.toUpperCase();
+
+            let capitalizado = str.split(/([\s-])/).map(word => {
+                if (word === ' ' || word === '-') return word;
+
+                if (!isAllUpper && word === word.toUpperCase() && word.length > 1 && /[A-Z]/.test(word)) {
+                    return word;
+                }
+
+                let lowerWord = word.toLowerCase();
+
+                if (PARTICULAS_APELLIDO.includes(lowerWord)) return lowerWord;
+
+                if (lowerWord.startsWith('mc') && lowerWord.length > 2) {
+                    return 'Mc' + lowerWord.charAt(2).toUpperCase() + lowerWord.slice(3);
+                }
+
+                if (lowerWord.startsWith("o'") && lowerWord.length > 2) {
+                    return "O'" + lowerWord.charAt(2).toUpperCase() + lowerWord.slice(3);
+                }
+
+                if (lowerWord.startsWith('mac') && lowerWord.length > 4 && !['macho', 'maca', 'macar'].includes(lowerWord.substring(0, 5))) {
+                    return 'Mac' + lowerWord.charAt(3).toUpperCase() + lowerWord.slice(4);
+                }
+
+                return lowerWord.charAt(0).toUpperCase() + lowerWord.slice(1);
+            }).join('');
+
+            return capitalizado.charAt(0).toUpperCase() + capitalizado.slice(1);
+        }
+
+        function extraerIniciales(nombres) {
+            if (!nombres) return "";
+
+            return nombres.split(/[\s-]+/)
+                .filter(n => n.length > 0 && !PARTICULAS_APELLIDO.includes(n.toLowerCase()))
+                .map(n => n.charAt(0).toUpperCase() + ".")
+                .join(" ");
+        }
+
+        function formatearAutorCompleto(nombreCompleto) {
+            let partes = nombreCompleto.trim().split(/\s+/);
+
+            if (partes.length === 1) return capitalizarNombres(partes[0]);
+
+            if (partes.length === 2) {
+                return `${capitalizarNombres(partes[1])}, ${extraerIniciales(partes[0])}`;
+            }
+
+            let splitIndex = partes.length - 2;
+
+            while (splitIndex > 0 && PARTICULAS_APELLIDO.includes(partes[splitIndex - 1].toLowerCase())) {
+                splitIndex--;
+            }
+
+            let apellidos = partes.slice(splitIndex).join(" ");
+            let nombres = partes.slice(0, splitIndex).join(" ");
+
+            return `${capitalizarNombres(apellidos)}, ${extraerIniciales(nombres)}`;
+        }
+
+        function separarAutoresManuales(cadenaAutores) {
+            if (!cadenaAutores) return [];
+
+            if (cadenaAutores.includes(';')) {
+                return cadenaAutores.split(';').map(a => a.trim()).filter(Boolean);
+            }
+
+            const posibleSeparacionConY = cadenaAutores.split(/\s+y\s+/i);
+
+            if (
+                posibleSeparacionConY.length === 2 &&
+                posibleSeparacionConY[0].trim().split(/\s+/).length >= 2 &&
+                posibleSeparacionConY[1].trim().split(/\s+/).length >= 2
+            ) {
+                return posibleSeparacionConY.map(a => a.trim()).filter(Boolean);
+            }
+
+            return [cadenaAutores.trim()];
+        }
+
+        function normalizarAutoresManuales(cadenaAutores) {
+            if (!cadenaAutores) return "";
+
+            return separarAutoresManuales(cadenaAutores)
+                .map(autor => {
+                    if (autor.includes(',')) return autor.trim();
+                    return formatearAutorCompleto(autor);
+                })
+                .filter(Boolean)
+                .join('; ');
+        }
+
+        function normalizarAutoresWeb(cadenaAutores) {
+            if (!cadenaAutores) return "";
+
+            if (cadenaAutores.includes(';')) {
+                return normalizarAutoresManuales(cadenaAutores);
+            }
+
+            return cadenaAutores.trim();
+        }
+
+        function formatearAutorAPI(a) {
+            const family = a.family ? capitalizarNombres(a.family) : "";
+            const iniciales = a.given ? extraerIniciales(a.given) : "";
+
+            if (family && iniciales) return `${family}, ${iniciales}`;
+            if (family) return family;
+            if (a.name) return capitalizarNombres(a.name);
+
+            return "";
+        }
+
+        function limpiarMetadatoTitulo(titulo) {
+            if (!titulo) return "";
+
+            let limpio = titulo.replace(/^(?:[IVXLCDM]+\.—\s+|[0-9]+\.\s+|[A-Z]\.\s+)/i, "").trim();
+
+            if (limpio === limpio.toUpperCase() && limpio.length > 5) {
+                limpio = limpio.charAt(0).toUpperCase() + limpio.slice(1).toLowerCase();
+            }
+
+            return limpio;
+        }
+
+        async function buscarDatosMagicos() {
+            const input = document.getElementById('magic-input').value.trim();
+            const statusBox = document.getElementById('search-status');
+            const magicContainer = document.getElementById('magic-container');
+            const btnSearch = document.getElementById('btn-search-main');
+
+            if (btnSearch.disabled) return;
+
+            if (!input) {
+                registrarEvento('buscar_referencia_vacia');
+
+                document.getElementById('origen-datos').style.display = 'none';
+                document.getElementById('resultados').hidden = true;
+
+                statusBox.style.display = 'block';
+                statusBox.className = 'active status-warning';
+                statusBox.innerText = '⚠️ Por favor, pega un DOI, ISBN, enlace o texto para buscar.';
+
+                magicContainer.classList.remove('success');
+                magicContainer.classList.add('warning');
+
+                return;
+            }
+
+            const tipoEntrada = detectarTipoEntrada(input);
+
+            registrarEvento('buscar_referencia', {
+                tipo_entrada: tipoEntrada
+            });
+
+            document.getElementById('origen-datos').style.display = 'none';
+            document.getElementById('resultados').hidden = true;
+            document.getElementById('label-revista-repositorio').innerText = "Nombre de la revista";
+
+            statusBox.style.display = 'block';
+            statusBox.className = 'active status-loading';
+            statusBox.innerText = 'Buscando coincidencias en bases de datos académicas... ⏳';
+
+            magicContainer.classList.remove('success', 'warning');
+            quitarHighlights();
+            limpiarErroresCampos();
+
+            btnSearch.disabled = true;
+
+            try {
+                const doiMatch = input.match(/(10\.\d{4,9}\/[-._;()/:A-Z0-9]+)/i);
+
+                if (doiMatch) {
+                    await procesarDOI(limpiarDOI(doiMatch[1]));
+                    return;
+                }
+
+                if (pareceUrl(input)) {
+                    let finalUrl = prepararUrlEntrada(input);
+                    procesarURL(finalUrl);
+                    return;
+                }
+
+                const isbnLimpio = limpiarISBN(input);
+
+                if (isbnLimpio.match(/^(978|979)?\d{9}[\dX]$/i) && input.length < 90) {
+                    await procesarISBN(isbnLimpio);
+                    return;
+                }
+
+                const urlEncoded = encodeURIComponent(input);
+                const response = await fetchConTimeout(`https://api.crossref.org/works?query.bibliographic=${urlEncoded}&rows=8`);
+
+                if (!response.ok) {
+                    if (response.status === 429) throw new Error('RateLimit');
+                    throw new Error('Network');
+                }
+
+                const data = await response.json();
+
+                if (data.message.items && data.message.items.length > 0) {
+                    let mejorItem = data.message.items[0];
+                    let mejorPuntuacion = -1;
+                    const inputNormalizado = normalizarTexto(input);
+
+                    const yearMatch = input.match(/\b(19|20)\d{2}\b/);
+                    const yearInput = yearMatch ? yearMatch[0] : null;
+
+                    data.message.items.forEach(item => {
+                        let puntos = 0;
+
+                        if (item.title?.[0]) {
+                            let tituloPalabras = normalizarTexto(item.title[0]).split(' ');
+
+                            tituloPalabras.forEach(palabra => {
+                                if (palabra.length > 3 && inputNormalizado.includes(palabra)) puntos += 2;
+                            });
+                        }
+
+                        if (item.author?.[0]?.family) {
+                            let apellidoNormalizado = normalizarTexto(item.author[0].family);
+                            if (inputNormalizado.includes(apellidoNormalizado)) puntos += 3;
+                        }
+
+                        if (item.DOI && inputNormalizado.includes(normalizarTexto(item.DOI))) puntos += 5;
+
+                        if (item['container-title']?.[0]) {
+                            let revistaNorm = normalizarTexto(item['container-title'][0]);
+                            if (inputNormalizado.includes(revistaNorm)) puntos += 4;
+                        }
+
+                        if (item.volume && inputNormalizado.includes(item.volume.toString())) puntos += 2;
+                        if (item.issue && inputNormalizado.includes(item.issue.toString())) puntos += 2;
+                        if (item.page && inputNormalizado.includes(item.page.toString())) puntos += 2;
+
+                        let yearItem = item.issued?.['date-parts']?.[0]?.[0]?.toString() || null;
+
+                        if (yearItem && yearInput) {
+                            if (yearItem === yearInput) puntos += 4;
+                            else puntos -= 3;
+                        }
+
+                        if (puntos > mejorPuntuacion) {
+                            mejorPuntuacion = puntos;
+                            mejorItem = item;
+                        }
+                    });
+
+                    if (mejorPuntuacion < 3) throw new Error('WeakMatch');
+
+                    const item = mejorItem;
+                    limpiarCampos('paper');
+
+                    let autoresAPA = "";
+
+                    if (item.author) {
+                        autoresAPA = item.author.map(formatearAutorAPI).filter(Boolean).join("; ");
+                    }
+
+                    let year = item.issued?.['date-parts']?.[0]?.[0] || "";
+                    let tituloLimpio = item.title?.[0] ? limpiarMetadatoTitulo(item.title[0]) : "";
+
+                    document.getElementById('p-autor').value = autoresAPA;
+                    document.getElementById('p-ano').value = year;
+                    document.getElementById('p-titulo').value = tituloLimpio;
+                    document.getElementById('label-revista-repositorio').innerText = "Nombre de la revista";
+                    document.getElementById('p-revista').value = item['container-title']?.[0] || "";
+                    document.getElementById('p-vol').value = item.volume || "";
+                    document.getElementById('p-num').value = item.issue || "";
+                    document.getElementById('p-pag').value = item.page || "";
+                    document.getElementById('p-doi').value = item.DOI ? `https://doi.org/${item.DOI}` : "";
+
+                    let estadoFinal = mejorPuntuacion > 4 ? 'success' : 'warning';
+                    let mensajeExito = mejorPuntuacion > 4
+                        ? "✔️ ¡Coincidencia encontrada! Por favor, verifica los datos."
+                        : "⚠️ Coincidencia débil. Revisa atentamente los datos extraídos.";
+
+                    cambiarAModoRevision('paper', mensajeExito, estadoFinal, 'Crossref (texto bibliográfico)', 'Artículo');
+                } else {
+                    throw new Error('NotFound');
+                }
+            } catch (error) {
+                registrarEvento('autocompletado_fallido', {
+                    tipo_entrada: tipoEntrada,
+                    motivo: error.message || 'desconocido'
+                });
+
+                statusBox.className = 'active status-warning';
+
+                if (error.message === 'Timeout') {
+                    statusBox.innerText = '⚠️ La base de datos está tardando demasiado en responder. Inténtalo de nuevo.';
+                } else if (error.message === 'Network' || error.name === 'TypeError') {
+                    statusBox.innerText = '⚠️ Error de red: no se pudo conectar con la base de datos. Revisa tu conexión a internet.';
+                } else if (error.message === 'RateLimit') {
+                    statusBox.innerText = '⚠️ La base de datos está recibiendo demasiadas peticiones. Inténtalo en unos segundos.';
+                } else {
+                    statusBox.innerText = '⚠️ No encontramos coincidencias exactas. Por favor, rellena los campos a mano.';
+                }
+
+                let tabFallback = activeTab;
+
+                if (pareceUrl(input)) {
+                    tabFallback = 'web';
+                } else {
+                    const doiDetectado = input.match(/(10\.\d{4,9}\/[-._;()/:A-Z0-9]+)/i);
+                    const isbnDetectado = limpiarISBN(input).match(/^(978|979)?\d{9}[\dX]$/i);
+
+                    if (doiDetectado) tabFallback = 'paper';
+                    else if (isbnDetectado) tabFallback = 'libro';
+                }
+
+                changeTab(tabFallback, true);
+                mostrarFormularios();
+            } finally {
+                btnSearch.disabled = false;
+            }
+        }
+
+        function establecerConfianza(origen, tipo, estado = 'success') {
+            if (origen.includes('Crossref (DOI)')) {
+                confianzaActual = 'alta';
+                detalleConfianzaActual = 'DOI localizado en Crossref. Aun así, revisa autores, título, revista, volumen, páginas y DOI antes de entregar.';
+            } else if (origen.includes('DataCite')) {
+                confianzaActual = 'media';
+                detalleConfianzaActual = 'DOI localizado en DataCite. Puede tratarse de un repositorio, preprint o documento académico: revisa el tipo de fuente antes de entregar.';
+            } else if (origen.includes('Google Books') || origen.includes('OpenLibrary')) {
+                confianzaActual = 'media';
+                detalleConfianzaActual = 'ISBN localizado en una base de datos de libros. Revisa autores, año, título y editorial.';
+            } else if (origen.includes('Crossref (texto bibliográfico)')) {
+                confianzaActual = estado === 'success' ? 'media' : 'media-baja';
+                detalleConfianzaActual = 'Coincidencia obtenida por texto bibliográfico. Revisa cuidadosamente que el resultado corresponde exactamente con tu fuente.';
+            } else if (origen.includes('Extracción manual')) {
+                confianzaActual = 'baja';
+                detalleConfianzaActual = 'URL detectada, pero autor y título deben completarse o revisarse manualmente.';
+            } else {
+                confianzaActual = 'manual';
+                detalleConfianzaActual = 'Referencia generada con datos introducidos o revisados manualmente.';
+            }
+        }
+
+        function cambiarAModoRevision(tab, mensaje, estado = 'success', origen = '', tipo = '') {
+            changeTab(tab, true);
+            mostrarFormularios(false);
+            establecerConfianza(origen, tipo, estado);
+
+            const statusBox = document.getElementById('search-status');
+            const magicContainer = document.getElementById('magic-container');
+            const origenDatosBox = document.getElementById('origen-datos');
+
+            statusBox.style.display = 'block';
+            magicContainer.classList.remove('success', 'warning');
+
+            let highlightClass = '';
+
+            if (estado === 'success') {
+                statusBox.className = 'active status-success';
+                magicContainer.classList.add('success');
+                highlightClass = 'highlight-success';
+            } else if (estado === 'warning') {
+                statusBox.className = 'active status-warning';
+                magicContainer.classList.add('warning');
+                highlightClass = 'highlight-warning';
+            }
+
+            statusBox.innerText = mensaje;
+
+            if (origen && tipo) {
+                origenDatosBox.textContent = '';
+
+                const icono = document.createTextNode('📌 ');
+                const strongTipo = document.createElement('strong');
+                strongTipo.textContent = 'Tipo detectado:';
+                const textoTipo = document.createTextNode(' ' + tipo + ' | ');
+
+                const strongFuente = document.createElement('strong');
+                strongFuente.textContent = 'Fuente usada:';
+                const textoFuente = document.createTextNode(' ' + origen);
+
+                origenDatosBox.appendChild(icono);
+                origenDatosBox.appendChild(strongTipo);
+                origenDatosBox.appendChild(textoTipo);
+                origenDatosBox.appendChild(strongFuente);
+                origenDatosBox.appendChild(textoFuente);
+
+                origenDatosBox.style.display = 'flex';
+            } else {
+                origenDatosBox.style.display = 'none';
+            }
+
+            if (origen && tipo && origen !== 'Extracción manual') {
+                registrarEvento('autocompletado_exitoso', {
+                    fuente: origen.toLowerCase(),
+                    tipo_documento: tipo.toLowerCase(),
+                    confianza: confianzaActual
+                });
+            }
+
+            document.querySelectorAll(`#form-${tab} input`).forEach(input => {
+                if (input.value) {
+                    input.classList.remove('highlight-success', 'highlight-warning');
+                    void input.offsetWidth;
+                    input.classList.add(highlightClass);
+
+                    if (input.highlightTimeout) clearTimeout(input.highlightTimeout);
+                    input.highlightTimeout = setTimeout(() => input.classList.remove(highlightClass), 3500);
+                }
+            });
+        }
+
+        async function procesarDOI(doi) {
+            doi = limpiarDOI(doi);
+
+            const statusBox = document.getElementById('search-status');
+            const origenDatosBox = document.getElementById('origen-datos');
+
+            limpiarCampos('paper');
+            origenDatosBox.style.display = 'none';
+
+            const rellenarPaper = (item, fuente = 'Crossref (DOI)', tipo = 'Artículo') => {
+                let autoresAPA = "";
+
+                if (item.author && item.author.length > 0) {
+                    autoresAPA = item.author.map(formatearAutorAPI).filter(Boolean).join("; ");
+                } else if (item.creators && item.creators.length > 0) {
+                    autoresAPA = item.creators.map(c => {
+                        if (c.familyName && c.givenName) {
+                            return `${capitalizarNombres(c.familyName)}, ${extraerIniciales(c.givenName)}`;
+                        } else if (c.name) {
+                            return formatearAutorCompleto(c.name);
+                        }
+
+                        return "";
+                    }).filter(Boolean).join("; ");
+                }
+
+                const year =
+                    item.issued?.['date-parts']?.[0]?.[0] ||
+                    item.publicationYear ||
+                    "";
+
+                const tituloLimpio =
+                    (item.title?.[0] ? limpiarMetadatoTitulo(item.title[0]) : "") ||
+                    (item.titles?.[0]?.title ? limpiarMetadatoTitulo(item.titles[0].title) : "");
+
+                const revista =
+                    item['container-title']?.[0] ||
+                    item.publisher ||
+                    "";
+
+                document.getElementById('p-autor').value = autoresAPA;
+                document.getElementById('p-ano').value = year;
+                document.getElementById('p-titulo').value = tituloLimpio;
+                document.getElementById('label-revista-repositorio').innerText = tipo === 'Artículo' ? "Nombre de la revista" : "Repositorio / institución";
+                document.getElementById('p-revista').value = revista;
+                document.getElementById('p-vol').value = item.volume || "";
+                document.getElementById('p-num').value = item.issue || "";
+                document.getElementById('p-pag').value = item.page || "";
+                document.getElementById('p-doi').value = `https://doi.org/${doi}`;
+
+                const esRepositorio = fuente === 'DataCite' || tipo !== 'Artículo';
+                const mensajeRevision = esRepositorio
+                    ? "⚠️ Documento encontrado en repositorio/preprint. Revisa manualmente el formato APA final."
+                    : "✔️ ¡Artículo encontrado por DOI! Verifica los datos extraídos.";
+
+                cambiarAModoRevision(
+                    'paper',
+                    mensajeRevision,
+                    esRepositorio ? 'warning' : 'success',
+                    fuente,
+                    tipo
+                );
+            };
+
+            try {
+                const responseCR = await fetchConTimeout(`https://api.crossref.org/works/${doi}`);
+
+                if (!responseCR.ok) {
+                    if (responseCR.status === 404) throw new Error('CrossrefNotFound');
+                    if (responseCR.status === 429) throw new Error('CrossrefRateLimit');
+                    throw new Error('CrossrefError');
+                }
+
+                const dataCR = await responseCR.json();
+                rellenarPaper(dataCR.message, 'Crossref (DOI)', 'Artículo');
+                return;
+            } catch (errorCR) {
+                try {
+                    const responseDC = await fetchConTimeout(`https://api.datacite.org/dois/${doi}`);
+
+                    if (!responseDC.ok) {
+                        if (responseDC.status === 404) throw new Error('DataCiteNotFound');
+                        if (responseDC.status === 429) throw new Error('DataCiteRateLimit');
+                        throw new Error('DataCiteError');
+                    }
+
+                    const dataDC = await responseDC.json();
+                    rellenarPaper(dataDC.data.attributes, 'DataCite', 'Preprint/Repositorio');
+                    return;
+                } catch (errorDC) {
+                    registrarEvento('autocompletado_fallido', {
+                        tipo_entrada: 'doi',
+                        motivo_crossref: errorCR.message || 'desconocido',
+                        motivo_datacite: errorDC.message || 'desconocido'
+                    });
+
+                    statusBox.className = 'active status-warning';
+
+                    if (errorCR.message === 'CrossrefRateLimit' || errorDC.message === 'DataCiteRateLimit') {
+                        statusBox.innerText = '⚠️ Las bases de datos del DOI están saturadas. Puedes rellenar los datos a mano.';
+                    } else if (
+                        errorCR.message === 'Timeout' ||
+                        errorDC.message === 'Timeout' ||
+                        errorCR.name === 'TypeError' ||
+                        errorDC.name === 'TypeError'
+                    ) {
+                        statusBox.innerText = '⚠️ Error de conexión al buscar el DOI. Revisa tu internet o rellena los datos manualmente.';
+                    } else {
+                        statusBox.innerText = '⚠️ No hemos podido localizar este DOI automáticamente. Puedes rellenar los datos a mano.';
+                    }
+
+                    changeTab('paper', true);
+                    mostrarFormularios();
+                    origenDatosBox.style.display = 'none';
+                    marcarModoManual();
+                }
+            }
+        }
+
+        async function procesarISBN(isbn) {
+            const statusBox = document.getElementById('search-status');
+            const origenDatosBox = document.getElementById('origen-datos');
+
+            limpiarCampos('libro');
+            origenDatosBox.style.display = 'none';
+
+            const rellenarLibro = (item, fuente = 'Google Books') => {
+                let autoresAPA = "";
+
+                if (item.authors && item.authors.length > 0) {
+                    autoresAPA = item.authors.map(a => {
+                        const nombre = typeof a === 'string' ? a : a.name;
+                        return formatearAutorCompleto(nombre);
+                    }).join("; ");
+                }
+
+                const fechaRaw = item.publishedDate || item.publish_date || "";
+                const yearMatch = fechaRaw ? fechaRaw.match(/\d{4}/) : null;
+                const tituloLimpio = item.title ? limpiarMetadatoTitulo(item.title) : "";
+                const editorial =
+                    item.publisher ||
+                    (item.publishers && item.publishers.length > 0
+                        ? (typeof item.publishers[0] === 'string' ? item.publishers[0] : item.publishers[0].name)
+                        : "");
+
+                document.getElementById('l-autor').value = autoresAPA;
+                document.getElementById('l-ano').value = yearMatch ? yearMatch[0] : "";
+                document.getElementById('l-titulo').value = tituloLimpio;
+                document.getElementById('l-editorial').value = editorial;
+
+                cambiarAModoRevision(
+                    'libro',
+                    fuente === 'Google Books'
+                        ? "✔️ ¡Libro encontrado! Verifica los datos en el formulario."
+                        : "✔️ ¡Libro encontrado en OpenLibrary! Verifica los datos.",
+                    'success',
+                    fuente,
+                    'Libro'
+                );
+            };
+
+            let errorGB = null;
+
+            try {
+                const responseGB = await fetchConTimeout(`https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`);
+
+                if (!responseGB.ok) {
+                    if (responseGB.status === 429) throw new Error('GoogleBooksRateLimit');
+                    throw new Error('GoogleBooksError');
+                }
+
+                const dataGB = await responseGB.json();
+
+                if (dataGB.items && dataGB.items.length > 0) {
+                    rellenarLibro(dataGB.items[0].volumeInfo, 'Google Books');
+                    return;
+                }
+
+                throw new Error('GoogleBooksNotFound');
+            } catch (err) {
+                errorGB = err;
+            }
+
+            try {
+                const responseOL = await fetchConTimeout(`https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`);
+
+                if (!responseOL.ok) {
+                    if (responseOL.status === 429) throw new Error('OpenLibraryRateLimit');
+                    throw new Error('OpenLibraryError');
+                }
+
+                const dataOL = await responseOL.json();
+                const bookKey = `ISBN:${isbn}`;
+
+                if (dataOL[bookKey]) {
+                    rellenarLibro(dataOL[bookKey], 'OpenLibrary');
+                    return;
+                }
+
+                throw new Error('OpenLibraryNotFound');
+            } catch (errorOL) {
+                registrarEvento('autocompletado_fallido', {
+                    tipo_entrada: 'isbn',
+                    motivo_google_books: errorGB?.message || 'desconocido',
+                    motivo_openlibrary: errorOL.message || 'desconocido'
+                });
+
+                statusBox.className = 'active status-warning';
+
+                if (
+                    errorGB?.message === 'Timeout' ||
+                    errorOL.message === 'Timeout' ||
+                    errorGB?.name === 'TypeError' ||
+                    errorOL.name === 'TypeError'
+                ) {
+                    statusBox.innerText = '⚠️ Error de conexión al buscar el ISBN. Revisa tu internet o rellena los datos manualmente.';
+                } else if (
+                    errorGB?.message === 'GoogleBooksRateLimit' ||
+                    errorOL.message === 'OpenLibraryRateLimit'
+                ) {
+                    statusBox.innerText = '⚠️ Los servidores de búsqueda de libros están saturados. Puedes rellenar los datos a mano.';
+                } else {
+                    statusBox.innerText = '⚠️ No hemos podido recuperar este ISBN automáticamente. Puedes rellenar los datos a mano.';
+                }
+
+                changeTab('libro', true);
+                mostrarFormularios();
+                origenDatosBox.style.display = 'none';
+                marcarModoManual();
+            }
+        }
+
+        function procesarURL(url) {
+            limpiarCampos('web');
+
+            const statusBox = document.getElementById('search-status');
+            const magicContainer = document.getElementById('magic-container');
+
+            try {
+                let urlLimpia = limpiarUrlParaCita(url);
+                let urlObj = new URL(urlLimpia);
+
+                let dominiosConocidos = {
+                    "who.int": "Organización Mundial de la Salud",
+                    "nature.com": "Nature",
+                    "pubmed.ncbi.nlm.nih.gov": "PubMed",
+                    "wikipedia.org": "Wikipedia",
+                    "xataka.com": "Xataka",
+                    "elpais.com": "El País",
+                    "elmundo.es": "El Mundo",
+                    "bbc.com": "BBC News"
+                };
+
+                let host = urlObj.hostname.replace("www.", "");
+                let sitioHumanizado = dominiosConocidos[host.toLowerCase()] || capitalizarNombres(host.split('.')[0]);
+
+                document.getElementById('w-sitio').value = sitioHumanizado;
+                document.getElementById('w-url').value = urlLimpia;
+
+                cambiarAModoRevision(
+                    'web',
+                    "⚠️ Sitio web detectado. Añade tú el título y autor si corresponde para completar la cita.",
+                    'warning',
+                    'Extracción manual',
+                    'Página web'
+                );
+            } catch (e) {
+                registrarEvento('autocompletado_fallido', {
+                    tipo_entrada: 'url',
+                    motivo: 'url_no_valida'
+                });
+
+                statusBox.style.display = 'block';
+                statusBox.className = 'active status-warning';
+                statusBox.innerText = '⚠️ La URL introducida no parece ser válida. Por favor, revísala y rellena los datos a mano.';
+
+                magicContainer.classList.remove('success');
+                magicContainer.classList.add('warning');
+
+                changeTab('web', true);
+                mostrarFormularios();
+
+                document.getElementById('origen-datos').style.display = 'none';
+                marcarModoManual();
+            }
+        }
+
+        function quitarHighlights() {
+            document.querySelectorAll('input').forEach(input => {
+                input.classList.remove('highlight-success', 'highlight-warning');
+                if (input.highlightTimeout) clearTimeout(input.highlightTimeout);
+            });
+        }
+
+        function abreviarTitulo(titulo) {
+            if (!titulo || titulo === 'Sin título') return "Sin título";
+
+            let texto = titulo.replace(/<\/?i>/g, '');
+            let palabras = texto.split(' ');
+
+            if (palabras.length <= 4) return titulo;
+
+            return palabras.slice(0, 4).join(' ') + "...";
+        }
+
+        function obtenerAutoresParaCita(cadenaAutores) {
+            if (!cadenaAutores) return [];
+
+            return cadenaAutores.split(';')
+                .map(a => a.trim())
+                .filter(Boolean)
+                .map(autor => autor.includes(',') ? autor.split(',')[0].trim() : autor.trim());
+        }
+
+        function generarCitaParentetica(cadenaAutores, ano, titulo, tipo) {
+            if (!cadenaAutores) {
+                let tituloCorto = abreviarTitulo(titulo);
+
+                if (tipo === 'libro') return `(<i>${tituloCorto}</i>, ${ano})`;
+
+                return `("${tituloCorto}", ${ano})`;
+            }
+
+            let autores = obtenerAutoresParaCita(cadenaAutores);
+
+            if (autores.length === 1) return `(${autores[0]}, ${ano})`;
+            if (autores.length === 2) return `(${autores[0]} & ${autores[1]}, ${ano})`;
+
+            return `(${autores[0]} et al., ${ano})`;
+        }
+
+        function generarCitaNarrativa(cadenaAutores, ano, titulo, tipo) {
+            if (!cadenaAutores) {
+                let tituloCorto = abreviarTitulo(titulo);
+
+                if (tipo === 'libro') return `<i>${tituloCorto}</i> (${ano})`;
+
+                return `"${tituloCorto}" (${ano})`;
+            }
+
+            let autores = obtenerAutoresParaCita(cadenaAutores);
+
+            if (autores.length === 1) return `${autores[0]} (${ano})`;
+            if (autores.length === 2) return `${autores[0]} y ${autores[1]} (${ano})`;
+
+            return `${autores[0]} et al. (${ano})`;
+        }
+
+        function generarCitaTextual(cadenaAutores, ano, titulo, tipo, pagina) {
+            const paginaLimpia = limpiarHTML(String(pagina || '').trim());
+            const localizador = paginaLimpia
+                ? (paginaLimpia.includes('-') ? `pp. ${paginaLimpia}` : `p. ${paginaLimpia}`)
+                : 'p. xx';
+
+            if (!cadenaAutores) {
+                let tituloCorto = abreviarTitulo(titulo);
+
+                if (tipo === 'libro') return `(<i>${tituloCorto}</i>, ${ano}, ${localizador})`;
+
+                return `("${tituloCorto}", ${ano}, ${localizador})`;
+            }
+
+            let autores = obtenerAutoresParaCita(cadenaAutores);
+
+            if (autores.length === 1) return `(${autores[0]}, ${ano}, ${localizador})`;
+            if (autores.length === 2) return `(${autores[0]} & ${autores[1]}, ${ano}, ${localizador})`;
+
+            return `(${autores[0]} et al., ${ano}, ${localizador})`;
+        }
+
+        function formatearAutoresLarga(cadenaAutores) {
+            if (!cadenaAutores) return '';
+
+            let listaAutores = cadenaAutores.split(';').map(a => a.trim()).filter(a => a);
+
+            if (listaAutores.length === 1) return listaAutores[0];
+
+            let ultimosDos = listaAutores.slice(-2).join(', & ');
+
+            if (listaAutores.length === 2) return ultimosDos;
+
+            let resto = listaAutores.slice(0, -2).join(', ');
+
+            return `${resto}, ${ultimosDos}`;
+        }
+
+        function validarAno(anoTexto) {
+            if (!anoTexto || anoTexto === 's.f.') return true;
+
+            return /^\d{4}$/.test(anoTexto);
+        }
+
+        function actualizarCajaConfianza() {
+            const pill = document.getElementById('confidence-pill');
+            const detail = document.getElementById('confidence-detail');
+
+            const labels = {
+                alta: '✅ Confianza alta',
+                media: '🟦 Confianza media',
+                'media-baja': '⚠️ Confianza media-baja',
+                baja: '⚠️ Confianza baja',
+                manual: '🧭 Confianza manual'
+            };
+
+            pill.className = `confidence-pill confidence-${confianzaActual}`;
+            pill.innerText = labels[confianzaActual] || labels.manual;
+            detail.innerText = detalleConfianzaActual;
+        }
+
+        function generarCita() {
+            let citaParentetica = "";
+            let citaNarrativa = "";
+            let citaTextual = "";
+            let citaLarga = "";
+            let avisos = [];
+
+            limpiarErroresCampos();
+
+            const addAviso = (texto, nivel = 'revision', campoId = null) => {
+                avisos.push({ texto, nivel });
+
+                if (campoId) {
+                    marcarCampo(campoId);
+                }
+            };
+
+            let doi = limpiarDOI(obtenerValorCampo('p-doi'));
+            const paginaTextual = obtenerValorCampo('pagina-textual');
+
+            if (activeTab === 'web') {
+                const autorRaw = limpiarTextoSeguro(normalizarAutoresWeb(obtenerValorCampo('w-autor')));
+                const ano = limpiarTextoSeguro(obtenerValorCampo('w-ano')) || 's.f.';
+                const titulo = limpiarTextoSeguro(obtenerValorCampo('w-titulo')) || 'Sin título';
+                const sitio = limpiarTextoSeguro(obtenerValorCampo('w-sitio'));
+                const urlRaw = obtenerValorCampo('w-url');
+                let url = urlRaw ? limpiarTextoSeguro(limpiarUrlParaCita(urlRaw)) : '';
+
+                if (!autorRaw) addAviso("No hay autor. Se usará el título en su lugar según normativa APA.", 'revision');
+                if (!validarAno(ano)) addAviso("El campo año no parece tener un formato válido. Usa un año de cuatro cifras, por ejemplo 2024.", 'importante', 'w-ano');
+                if (titulo === 'Sin título') addAviso("Falta el título de la página.", 'importante', 'w-titulo');
+                if (!url) addAviso("Falta la URL del enlace.", 'importante', 'w-url');
+
+                citaParentetica = generarCitaParentetica(autorRaw, ano, titulo, 'web');
+                citaNarrativa = generarCitaNarrativa(autorRaw, ano, titulo, 'web');
+                citaTextual = generarCitaTextual(autorRaw, ano, titulo, 'web', paginaTextual);
+
+                let autorFormateado = formatearAutoresLarga(autorRaw);
+                let sitioDuplicado = autorRaw && sitio && normalizarTexto(autorRaw) === normalizarTexto(sitio);
+                let parteSitio = sitio && !sitioDuplicado ? `${sitio}. ` : '';
+                let parteUrl = url ? `${url}` : '';
+
+                if (!autorFormateado) citaLarga = `<i>${titulo}</i>. (${ano}). ${parteSitio}${parteUrl}`;
+                else citaLarga = `${autorFormateado}. (${ano}). <i>${titulo}</i>. ${parteSitio}${parteUrl}`;
+            } else if (activeTab === 'libro') {
+                const autorRaw = limpiarTextoSeguro(normalizarAutoresManuales(obtenerValorCampo('l-autor')));
+                const ano = limpiarTextoSeguro(obtenerValorCampo('l-ano')) || 's.f.';
+                const titulo = limpiarTextoSeguro(obtenerValorCampo('l-titulo')) || 'Sin título';
+                const editorial = limpiarTextoSeguro(obtenerValorCampo('l-editorial'));
+
+                if (!autorRaw) addAviso("No hay autor. Se usará el título en su lugar.", 'revision');
+                if (!validarAno(ano)) addAviso("El campo año no parece tener un formato válido. Usa un año de cuatro cifras, por ejemplo 2024.", 'importante', 'l-ano');
+                if (titulo === 'Sin título') addAviso("Falta el título del libro.", 'importante', 'l-titulo');
+                if (!editorial) addAviso("Falta la editorial.", 'importante', 'l-editorial');
+
+                citaParentetica = generarCitaParentetica(autorRaw, ano, titulo, 'libro');
+                citaNarrativa = generarCitaNarrativa(autorRaw, ano, titulo, 'libro');
+                citaTextual = generarCitaTextual(autorRaw, ano, titulo, 'libro', paginaTextual);
+
+                let autorFormateado = formatearAutoresLarga(autorRaw);
+                let parteEditorial = editorial ? `${editorial}.` : '';
+
+                if (!autorFormateado) citaLarga = `<i>${titulo}</i>. (${ano}). ${parteEditorial}`;
+                else citaLarga = `${autorFormateado}. (${ano}). <i>${titulo}</i>. ${parteEditorial}`;
+            } else if (activeTab === 'paper') {
+                const autorRaw = limpiarTextoSeguro(normalizarAutoresManuales(obtenerValorCampo('p-autor')));
+                const ano = limpiarTextoSeguro(obtenerValorCampo('p-ano')) || 's.f.';
+                const titulo = limpiarTextoSeguro(obtenerValorCampo('p-titulo')) || 'Sin título';
+                const revista = limpiarTextoSeguro(obtenerValorCampo('p-revista'));
+                const vol = limpiarTextoSeguro(obtenerValorCampo('p-vol'));
+                const num = limpiarTextoSeguro(obtenerValorCampo('p-num'));
+                const pag = limpiarTextoSeguro(obtenerValorCampo('p-pag'));
+
+                if (!autorRaw) addAviso("No hay autor. Se usará el título en su lugar.", 'revision');
+                if (!validarAno(ano)) addAviso("El campo año no parece tener un formato válido. Usa un año de cuatro cifras, por ejemplo 2024.", 'importante', 'p-ano');
+                if (titulo === 'Sin título') addAviso("Falta el título del artículo.", 'importante', 'p-titulo');
+                if (!revista) addAviso("Falta el nombre de la revista o repositorio.", 'importante', 'p-revista');
+                if (!doi) addAviso("Recomendación: si el artículo tiene DOI oficial, es preferible añadirlo.", 'revision');
+
+                const doiUrl = doi ? `https://doi.org/${limpiarTextoSeguro(doi)}` : '';
+
+                citaParentetica = generarCitaParentetica(autorRaw, ano, titulo, 'paper');
+                citaNarrativa = generarCitaNarrativa(autorRaw, ano, titulo, 'paper');
+                citaTextual = generarCitaTextual(autorRaw, ano, titulo, 'paper', paginaTextual);
+
+                let autorFormateado = formatearAutoresLarga(autorRaw);
+                let bloqueRevista = "";
+
+                if (revista) {
+                    bloqueRevista = `<i>${revista}`;
+
+                    if (vol) bloqueRevista += `, ${vol}`;
+
+                    bloqueRevista += `</i>`;
+
+                    if (num) bloqueRevista += `(${num})`;
+                    if (pag) bloqueRevista += `, ${pag}`;
+
+                    bloqueRevista += `.`;
+                }
+
+                let parteDoi = doiUrl ? ` ${doiUrl}` : '';
+
+                if (!autorFormateado) citaLarga = `${titulo}. (${ano}). ${bloqueRevista}${parteDoi}`.trim();
+                else citaLarga = `${autorFormateado}. (${ano}). ${titulo}. ${bloqueRevista}${parteDoi}`.trim();
+            }
+
+            const cajaAvisos = document.getElementById('validation-warnings');
+            const listaAvisos = document.getElementById('warning-list');
+
+            if (avisos.length > 0) {
+                listaAvisos.innerHTML = avisos.map(aviso => {
+                    const clase = aviso.nivel === 'importante' ? 'warning-important' : '';
+                    const etiqueta = aviso.nivel === 'importante' ? '<strong>Importante:</strong> ' : '<strong>Revisión:</strong> ';
+
+                    return `<li class="${clase}">${etiqueta}${limpiarHTML(aviso.texto)}</li>`;
+                }).join('');
+
+                cajaAvisos.style.display = 'block';
+            } else {
+                cajaAvisos.style.display = 'none';
+            }
+
+            citaLarga = citaLarga.replace(/\s+\./g, '.').replace(/\s+/g, ' ').trim();
+
+            document.getElementById('res-parentetica').innerHTML = citaParentetica;
+            document.getElementById('res-narrativa').innerHTML = citaNarrativa;
+            document.getElementById('res-textual').innerHTML = citaTextual;
+            document.getElementById('res-larga').innerHTML = citaLarga;
+            document.getElementById('resultados').hidden = false;
+
+            actualizarCajaConfianza();
+
+            referenciaActual = {
+                id: 'ref_' + Date.now(),
+                tipo: activeTab,
+                citaParentetica: citaParentetica,
+                citaNarrativa: citaNarrativa,
+                citaTextual: citaTextual,
+                referencia: citaLarga,
+                referenciaTexto: quitarHTML(citaLarga),
+                confianza: confianzaActual,
+                detalleConfianza: detalleConfianzaActual
+            };
+
+            registrarEvento('generar_cita', {
+                tipo_documento: activeTab,
+                con_avisos: avisos.length > 0 ? 'si' : 'no',
+                avisos_importantes: avisos.filter(a => a.nivel === 'importante').length,
+                con_doi: activeTab === 'paper' && doi ? 'si' : 'no',
+                confianza: confianzaActual
+            });
+
+            if (paginaTextual) {
+                registrarEvento('generar_cita_textual', {
+                    tipo_documento: activeTab,
+                    con_pagina: 'si'
+                });
+            }
+
+            document.getElementById('resultado-anuncio').textContent = 'Cita APA generada correctamente.';
+            document.getElementById('resultados').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function quitarHTML(html) {
+            const temp = document.createElement('div');
+            temp.innerHTML = html;
+            return temp.innerText;
+        }
+
+        async function copiarTexto(idElemento, boton, tipoCopia = 'desconocido') {
+            const elemento = document.getElementById(idElemento);
+            const textoPlano = elemento.innerText;
+            const html = elemento.innerHTML;
+            const textoOriginal = boton.innerHTML;
+
+            try {
+                if (navigator.clipboard && window.ClipboardItem) {
+                    const item = new ClipboardItem({
+                        'text/plain': new Blob([textoPlano], { type: 'text/plain' }),
+                        'text/html': new Blob([html], { type: 'text/html' })
+                    });
+
+                    await navigator.clipboard.write([item]);
+                } else if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(textoPlano);
+                } else {
+                    throw new Error('Clipboard no compatible');
+                }
+
+                registrarEvento('copiar_resultado', {
+                    tipo_copia: tipoCopia,
+                    tipo_documento: activeTab
+                });
+
+                boton.innerHTML = "¡Copiado! ✅";
+                boton.classList.add('copied');
+            } catch {
+                registrarEvento('error_copiar_resultado', {
+                    tipo_copia: tipoCopia,
+                    tipo_documento: activeTab
+                });
+
+                boton.classList.remove('copied');
+                boton.innerHTML = "No se pudo copiar ❌";
+            }
+
+            setTimeout(() => {
+                boton.innerHTML = textoOriginal;
+                boton.classList.remove('copied');
+            }, 2000);
+        }
+
+        function cargarBibliografiaGuardada() {
+            try {
+                const guardado = localStorage.getItem(STORAGE_KEY);
+                referenciasGuardadas = guardado ? JSON.parse(guardado) : [];
+
+                if (!Array.isArray(referenciasGuardadas)) {
+                    referenciasGuardadas = [];
+                }
+            } catch {
+                referenciasGuardadas = [];
+            }
+        }
+
+        function guardarBibliografia() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(referenciasGuardadas));
+            } catch {
+                registrarEvento('error_guardar_bibliografia');
+            }
+        }
+
+        function obtenerBibliografiaOrdenada() {
+            return [...referenciasGuardadas].sort((a, b) => {
+                return a.referenciaTexto.localeCompare(b.referenciaTexto, 'es', { sensitivity: 'base' });
+            });
+        }
+
+        function renderizarBibliografia() {
+            const count = document.getElementById('bibliography-count');
+            const empty = document.getElementById('bibliography-empty');
+            const list = document.getElementById('bibliography-list');
+
+            count.innerText = referenciasGuardadas.length;
+            list.innerHTML = '';
+
+            if (referenciasGuardadas.length === 0) {
+                empty.hidden = false;
+                return;
+            }
+
+            empty.hidden = true;
+
+            obtenerBibliografiaOrdenada().forEach(ref => {
+                const item = document.createElement('div');
+                item.className = 'bibliography-item';
+
+                item.innerHTML = `
+                    <p class="bibliography-item-ref">${ref.referencia}</p>
+                    <div class="bibliography-item-meta">
+                        <span class="bibliography-item-type">${traducirTipo(ref.tipo)} · ${traducirConfianza(ref.confianza)}</span>
+                        <button class="btn-delete-ref" type="button" onclick="eliminarReferenciaBibliografia('${ref.id}')">Eliminar</button>
+                    </div>
+                `;
+
+                list.appendChild(item);
+            });
+        }
+
+        function traducirTipo(tipo) {
+            const tipos = {
+                web: 'Página web',
+                libro: 'Libro',
+                paper: 'Artículo'
+            };
+
+            return tipos[tipo] || tipo;
+        }
+
+        function traducirConfianza(confianza) {
+            const niveles = {
+                alta: 'confianza alta',
+                media: 'confianza media',
+                'media-baja': 'confianza media-baja',
+                baja: 'confianza baja',
+                manual: 'manual'
+            };
+
+            return niveles[confianza] || 'manual';
+        }
+
+        function anadirReferenciaBibliografia() {
+            if (!referenciaActual || !referenciaActual.referenciaTexto) {
+                registrarEvento('intento_anadir_bibliografia_sin_referencia');
+                return;
+            }
+
+            const yaExiste = referenciasGuardadas.some(ref => {
+                return normalizarTexto(ref.referenciaTexto) === normalizarTexto(referenciaActual.referenciaTexto);
+            });
+
+            if (!yaExiste) {
+                referenciasGuardadas.push({ ...referenciaActual });
+                guardarBibliografia();
+                renderizarBibliografia();
+
+                registrarEvento('anadir_referencia_bibliografia', {
+                    tipo_documento: referenciaActual.tipo,
+                    confianza: referenciaActual.confianza,
+                    total_referencias: referenciasGuardadas.length
+                });
+            } else {
+                registrarEvento('referencia_bibliografia_duplicada', {
+                    tipo_documento: referenciaActual.tipo
+                });
+            }
+
+            document.getElementById('bibliography-box').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function eliminarReferenciaBibliografia(id) {
+            referenciasGuardadas = referenciasGuardadas.filter(ref => ref.id !== id);
+            guardarBibliografia();
+            renderizarBibliografia();
+
+            registrarEvento('eliminar_referencia_bibliografia', {
+                total_referencias: referenciasGuardadas.length
+            });
+        }
+
+        function borrarBibliografiaCompleta() {
+            if (referenciasGuardadas.length === 0) return;
+
+            referenciasGuardadas = [];
+            guardarBibliografia();
+            renderizarBibliografia();
+
+            registrarEvento('borrar_bibliografia_completa');
+        }
+
+        async function copiarBibliografiaCompleta() {
+            if (referenciasGuardadas.length === 0) {
+                registrarEvento('intento_copiar_bibliografia_vacia');
+                return;
+            }
+
+            const ordenadas = obtenerBibliografiaOrdenada();
+            const textoPlano = 'Referencias\n\n' + ordenadas.map(ref => ref.referenciaTexto).join('\n\n');
+            const html = '<h2>Referencias</h2>' + ordenadas.map(ref => `<p style="padding-left:36px;text-indent:-36px;">${ref.referencia}</p>`).join('');
+
+            try {
+                if (navigator.clipboard && window.ClipboardItem) {
+                    const item = new ClipboardItem({
+                        'text/plain': new Blob([textoPlano], { type: 'text/plain' }),
+                        'text/html': new Blob([html], { type: 'text/html' })
+                    });
+
+                    await navigator.clipboard.write([item]);
+                } else if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(textoPlano);
+                } else {
+                    throw new Error('Clipboard no compatible');
+                }
+
+                registrarEvento('copiar_bibliografia_completa', {
+                    total_referencias: referenciasGuardadas.length
+                });
+
+                alert('Bibliografía copiada ✅');
+            } catch {
+                registrarEvento('error_copiar_bibliografia_completa');
+                alert('No se pudo copiar la bibliografía ❌');
+            }
+        }
+
+        function observarBloque(id, evento) {
+            const elemento = document.getElementById(id);
+
+            if (!elemento || !('IntersectionObserver' in window)) return;
+
+            let registrado = false;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!registrado && entry.isIntersecting) {
+                        registrado = true;
+
+                        registrarEvento(evento, {
+                            bloque: id
+                        });
+
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.45 });
+
+            observer.observe(elemento);
+        }
+    </script>
+</body>
+</html>
