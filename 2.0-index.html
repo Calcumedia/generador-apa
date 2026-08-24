@@ -143,7 +143,6 @@
             --warning: #f59e0b;
             --brand-100: #e0e7ff;
             --brand-200: #c7d2fe;
-            --amazon: #ff9900;
             --shadow-main: 0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 10px 15px -5px rgba(0, 0, 0, 0.02);
             --shadow-card: 0 18px 40px -18px rgba(15, 23, 42, 0.12);
         }
@@ -601,7 +600,6 @@
         .faq-question:focus-visible,
         .tab-btn:focus-visible,
         .related-tool-btn:focus-visible,
-        .amazon-card:focus-visible,
         .resource-card-secondary:focus-visible,
         .example-btn:focus-visible,
         .btn-add-biblio:focus-visible,
@@ -1023,7 +1021,6 @@
             gap: 15px;
         }
 
-        .amazon-card,
         .resource-card-secondary {
             display: flex;
             align-items: center;
@@ -1031,57 +1028,6 @@
             text-decoration: none;
             color: var(--text-main);
             transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-        }
-
-        .amazon-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-left: 5px solid var(--amazon);
-            border-radius: 16px;
-            padding: 17px 20px;
-            box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.08);
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .amazon-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 18px -10px rgba(0, 0, 0, 0.16);
-        }
-
-        .amazon-text {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .amazon-title {
-            font-weight: 800;
-            font-size: 1rem;
-            color: var(--text-main);
-            margin: 0 0 2px;
-        }
-
-        .amazon-subtitle {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        .affiliate-note {
-            font-size: 0.75rem;
-            color: #94a3b8;
-            margin: 6px 0 0;
-        }
-
-        .amazon-btn {
-            background-color: #ffd814;
-            border: 1px solid #fcd200;
-            border-radius: 999px;
-            color: #0f172a;
-            padding: 7px 18px;
-            font-weight: 800;
-            font-size: 0.85rem;
-            white-space: nowrap;
         }
 
         .resource-card-secondary {
@@ -1240,12 +1186,10 @@
                 border-radius: 22px;
             }
 
-            .related-tool-btn,
-            .amazon-btn {
+            .related-tool-btn {
                 width: 100%;
             }
 
-            .amazon-card,
             .resource-card-secondary {
                 align-items: flex-start;
             }
@@ -1549,15 +1493,6 @@
         <h3 class="resources-title">🎓 Recursos recomendados para TFG/TFM</h3>
 
         <div class="resource-grid">
-            <a id="amazon-resource-card" href="https://www.amazon.es/joinstudent?tag=calcumedia-21" target="_blank" rel="noopener noreferrer sponsored" class="amazon-card" onclick="registrarEvento('clic_amazon', { ubicacion: 'recursos_apa', destino: 'prime_student' })">
-                <div class="amazon-text">
-                    <p class="amazon-title">¿En plena entrega de TFG, TFM o trabajos?</p>
-                    <p class="amazon-subtitle">Prime Student puede ayudarte con libros, material de estudio, envíos rápidos y Prime Video para desconectar.</p>
-                    <p class="affiliate-note">Enlace de afiliado: podemos recibir una comisión si te registras desde este enlace, sin coste adicional para ti.</p>
-                </div>
-
-                <div class="amazon-btn">Ver ventaja para estudiantes</div>
-            </a>
 
             <a href="https://apastyle.apa.org/style-grammar-guidelines/references/examples" target="_blank" rel="noopener noreferrer" class="resource-card-secondary" onclick="registrarEvento('clic_recurso_externo', { destino: 'guia_oficial_apa' })">
                 <p class="resource-title-sec"><span class="resource-icon">📘</span> Guía oficial de Normas APA</p>
@@ -1815,7 +1750,6 @@
             observarBloque('bibliography-box', 'ver_bloque_bibliografia');
             observarBloque('calculator-block', 'ver_bloque_calculadora_notas');
             observarBloque('resources-block', 'ver_bloque_recursos_apa');
-            observarBloque('amazon-resource-card', 'ver_bloque_amazon_apa');
             observarBloque('seo-block', 'ver_bloque_seo_apa');
             observarBloque('faq-block', 'ver_bloque_faq_apa');
         });
